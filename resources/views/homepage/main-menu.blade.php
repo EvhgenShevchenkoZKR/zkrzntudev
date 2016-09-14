@@ -1,6 +1,8 @@
 @section('navigation')
     <div class="main-menu-wrapper clearfix">
+
         <ul id="main-menu" class="sm sm-blue">
+            <h2 class="site-slogan">Запорізький коледж радіоелектроніки ЗНТУ</h2>
             @foreach($menus as $menu)
                 <li class="item"><a href="/{{$menu->url}}"><span>{{$menu->title}}</span></a>
                     @if(count($menu['submenus']) > 0)

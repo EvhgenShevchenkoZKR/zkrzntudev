@@ -2,6 +2,16 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
+.navigation {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 0px 3px 7px 1px #797979;
+  top: 0;
+}
+.slider-wrapper {
+  margin-top: 59px;
+}
 #top-n-horizontal .owl-buttons .owl-prev,
 #friends .owl-buttons .owl-prev,
 #owl-example .owl-buttons .owl-prev {
@@ -89,10 +99,6 @@ div.unslider .unslider-arrow.prev {
   color: #31708f;
   background-color: #d9edf7;
 }
-.main-menu-wrapper {
-  background: #3092c0;
-  background-image: linear-gradient(to bottom, #3298c8, #2e8cb8);
-}
 .main-menu-wrapper #main-menu {
   float: right;
   border-radius: 0;
@@ -123,14 +129,14 @@ p {
   color: #535353;
 }
 .top-news .news-slide-bottom {
-  height: 130px;
+  height: 185px;
   overflow: hidden;
 }
 .top-news .owl-page.active span {
-  background-color: #2e8cb8;
+  background-color: #00796B;
 }
 .top-news .owl-page:hover span {
-  background-color: #3092c0;
+  background-color: #009688;
 }
 .news-gorizontal,
 .news-wrapper {
@@ -158,7 +164,7 @@ p {
 }
 .news-gorizontal .n-text h4 a:hover,
 .news-wrapper .n-text h4 a:hover {
-  color: #228bbb;
+  color: #00796B;
   transition: color 0.3s ease;
 }
 .news-gorizontal .n-text .n-published,
@@ -188,7 +194,7 @@ p {
 }
 .news-gorizontal .n-text .n-tags a:hover,
 .news-wrapper .n-text .n-tags a:hover {
-  color: #228bbb;
+  color: #00796B;
   transition: color 0.3s ease;
 }
 .news-gorizontal .n-text .read-more a,
@@ -199,7 +205,7 @@ p {
 }
 .news-gorizontal .n-text .read-more a:hover,
 .news-wrapper .n-text .read-more a:hover {
-  color: #228bbb;
+  color: #00796B;
   transition: color 0.3s ease;
 }
 .news-gorizontal .n-text .n-author,
@@ -261,7 +267,7 @@ p {
   margin-left: 0;
 }
 .breadcrumbs ul li:first-child a {
-  color: #228bbb;
+  color: #00796B;
 }
 .breadcrumbs ul li:last-child a {
   pointer-events: none;
@@ -330,14 +336,14 @@ div.unslider .unslider-arrow {
   text-align: center;
 }
 .title-wrapper .page-title {
-  color: #228bbb;
+  color: #00796B;
   line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 19px;
   padding-bottom: 6px;
   margin: 10px 0 10px 0;
-  border-bottom: 3px solid #aaa;
+  border-bottom: 3px solid #FFB273;
   display: inline-block;
 }
 .title-wrapper .divide-title {
@@ -378,7 +384,7 @@ div.unslider .unslider-arrow {
   transition: color 0.3s ease;
 }
 .news-gorizontal .n-tags a:hover {
-  color: #228bbb;
+  color: #00796B;
   transition: color 0.3s ease;
 }
 .news-gorizontal .n-text {
@@ -396,18 +402,18 @@ div.unslider .unslider-arrow {
   font-size: 16px;
 }
 .divide-title {
-  color: #228bbb;
+  color: #00796B;
   line-height: 1.2;
   margin: 10px 0 20px 0;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 17px;
   padding-bottom: 6px;
-  border-bottom: 3px solid #aaa;
+  border-bottom: 3px solid #FFB273;
   text-align: center;
 }
 .btn-zkr {
-  background-color: #228bbb;
+  background-color: #00796B;
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
@@ -419,11 +425,11 @@ div.unslider .unslider-arrow {
 }
 .btn-zkr:hover,
 .btn-zkr:focus {
-  background-color: #0C5B7C;
+  background-color: #009688;
   color: #fff;
 }
 hr.divider {
-  border-top: 2px solid #228bbb;
+  border-top: 2px solid #00796B;
 }
 hr.divider.show {
   float: left;
@@ -436,22 +442,22 @@ hr.divider.show {
   text-align: center;
 }
 .advnews .tabs {
-  color: #228bbb;
+  color: #00796B;
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 700;
   cursor: pointer;
 }
 .advnews .tabs span {
-  border-bottom: 3px solid #aaa;
+  border-bottom: 3px solid #FFB273;
   width: 49%;
   text-align: center;
   display: inline-block;
-  color: #aaa;
+  color: #FFB273;
 }
 .advnews .tabs span.active {
-  color: #228bbb;
-  border-bottom: 3px solid #228bbb;
+  color: #00796B;
+  border-bottom: 3px solid #00796B;
 }
 .advnews .advert-tab {
   display: none;
@@ -462,7 +468,7 @@ hr.divider.show {
 }
 .advnews .news-tab .fn-wrapper .fn-created,
 .advnews .advert-tab .fn-wrapper .fn-created {
-  color: #aaa;
+  color: #FFB273;
 }
 .advnews .news-tab .fn-wrapper .fn-image,
 .advnews .advert-tab .fn-wrapper .fn-image {
@@ -484,7 +490,7 @@ hr.divider.show {
 }
 .advnews .news-tab .fn-wrapper .fn-fields .fn-title,
 .advnews .advert-tab .fn-wrapper .fn-fields .fn-title {
-  color: #228bbb;
+  color: #00796B;
   line-height: 1.2;
   margin: 0 0 7px 0;
   font-weight: 700;
@@ -501,7 +507,7 @@ hr.divider.show {
 }
 .advnews .news-tab .fn-more .btn,
 .advnews .advert-tab .fn-more .btn {
-  background-color: #228bbb;
+  background-color: #00796B;
 }
 .advnews .news-tab .fn-more .btn .watch-all,
 .advnews .advert-tab .fn-more .btn .watch-all {
@@ -523,11 +529,11 @@ hr.divider.show {
   transition: color 0.3s ease;
 }
 .all-c-wrapper a:hover {
-  color: #228bbb;
+  color: #00796B;
   transition: color 0.3s ease;
 }
 .hp-small-title {
-  color: #228bbb;
+  color: #00796B;
   line-height: 1.2;
   margin: 0 0 20px 0;
   font-weight: 700;
@@ -540,11 +546,15 @@ hr.divider.show {
   margin: 15px 0;
   text-align: center;
 }
+.massonry-wrapper .massonry-wrapper-inner {
+  max-width: 1300px;
+  margin: auto;
+}
 .massonry-wrapper .plate-wrapper {
   width: 24%;
   border-radius: 10px;
   min-height: 300px;
-  background-color: #228bbb;
+  background-color: #009688;
   color: #fff;
   padding: 20px 15px;
   font-size: 13px;
@@ -578,12 +588,12 @@ hr.divider.show {
   transition: background-color 0.6s ease, color 0.6s ease;
 }
 .massonry-wrapper .plate-wrapper .plate-body li:hover {
-  color: #228bbb;
+  color: #009688;
   background-color: white;
   transition: background-color 0.6s ease, color 0.6s ease;
 }
 .massonry-wrapper .plate-wrapper:hover {
-  background-color: #0C5B7C;
+  background-color: #00796B;
   transition: background-color 0.6s ease;
 }
 .friends-wrapper {
@@ -599,6 +609,99 @@ hr.divider.show {
   padding: 20px;
   text-align: right;
   font-size: 14px;
+}
+.site-slogan {
+  display: inline-block;
+  color: white;
+  font-style: italic;
+  margin: 13px;
+  float: left;
+  margin-right: 50px;
+}
+.main-menu-wrapper {
+  background: linear-gradient(to top, #00796B, #009688);
+}
+.main-menu-wrapper .relative-wrapper {
+  position: relative;
+}
+.main-menu-wrapper .site-logo {
+  position: absolute;
+  width: 133px;
+  height: 133px;
+  border-radius: 100%;
+  bottom: 10px;
+  z-index: 11;
+  background-image: url(images/vua_logo.png);
+  background-repeat: no-repeat;
+}
+.main-menu-wrapper #main-menu.sm-blue {
+  z-index: 10;
+  margin: auto;
+  background: linear-gradient(to top, #00796B, #009688);
+  border-radius: 0;
+  box-shadow: none;
+}
+.main-menu-wrapper #main-menu.sm-blue li {
+  border: none;
+}
+.main-menu-wrapper #main-menu.sm-blue li ul {
+  padding: 10px 0;
+  border-radius: 0;
+  background-color: #009688;
+  border: none;
+}
+.main-menu-wrapper #main-menu.sm-blue li ul li a {
+  background-color: #009688;
+  font-size: 14px;
+  padding: 5px 20px;
+}
+.main-menu-wrapper #main-menu.sm-blue li ul li:hover a {
+  background: #B2DFDB;
+}
+.main-menu-wrapper #main-menu.sm-blue li:hover a {
+  background-color: #009688;
+  border-radius: 0;
+}
+.main-menu-wrapper #main-menu.sm-blue li:hover a span.sub-arrow {
+  background-image: url(images/menu_dropdown_hover.png);
+}
+.main-menu-wrapper #main-menu.sm-blue a {
+  padding: 18px 24px 13px 20px;
+  background: linear-gradient(to top, #00796B, #009688);
+  color: white;
+  text-align: left;
+  font-size: 15px;
+  font-family: Open Sans, sans-serif;
+  font-weight: 700;
+}
+.main-menu-wrapper #main-menu.sm-blue a span.sub-arrow {
+  right: 5px;
+  top: 48%;
+  background-image: url(images/menu_dropdown.png);
+  background-repeat: no-repeat;
+  border: none;
+  width: 12px;
+  height: 12px;
+}
+.main-menu-wrapper #main-menu.sm-blue > li:first-child > a {
+  background-image: url(images/house-icon-mm-white.png);
+  font-size: 0;
+  width: 21px;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: 50% 59%;
+}
+.main-menu-wrapper #main-menu.sm-blue > li > a {
+  border-bottom: 5px solid #00796B;
+}
+.main-menu-wrapper #main-menu.sm-blue > li:hover > a {
+  border-bottom: 5px solid #FFB273;
+}
+body {
+  background-color: #fbf3da;
+}
+.btn {
+  box-shadow: 0 2px 5px 1px #797979;
 }
 @media (max-width: 767px) {
   .main-menu-wrapper ul#main-menu {

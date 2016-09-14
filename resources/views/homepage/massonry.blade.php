@@ -1,5 +1,6 @@
 @section('bottom-content')
     <div class="massonry-wrapper col-md-12">
+        <div class="massonry-wrapper-inner">
         <div class="title-wrapper">
             <h2 class="divide-title">Діяльність Запорізького коледжу радіоелектроніки</h2>
         </div>
@@ -19,6 +20,7 @@
                 </a>
             </div>
         @endforeach
+        </div>
     </div>
     <div class="friends-wrapper col-md-12">
         <div class="title-wrapper">
