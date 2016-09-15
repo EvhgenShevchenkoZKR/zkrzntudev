@@ -235,16 +235,16 @@
         },
         {
             "name": "cviebrock/eloquent-sluggable",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "506525bd2d4092f2bda933b65eb42c6ff4818e15"
+                "reference": "ef8d2a1eed190ea2f78d47ac92a4500b50ffbd54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/506525bd2d4092f2bda933b65eb42c6ff4818e15",
-                "reference": "506525bd2d4092f2bda933b65eb42c6ff4818e15",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/ef8d2a1eed190ea2f78d47ac92a4500b50ffbd54",
+                "reference": "ef8d2a1eed190ea2f78d47ac92a4500b50ffbd54",
                 "shasum": ""
             },
             "require": {
@@ -282,7 +282,7 @@
                 "laravel",
                 "slug"
             ],
-            "time": "2016-07-15 16:05:39"
+            "time": "2016-09-13 17:20:31"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1538,16 +1538,16 @@
         },
         {
             "name": "studio-42/elfinder",
-            "version": "2.1.14",
+            "version": "2.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Studio-42/elFinder.git",
-                "reference": "02c19ae09a36ec83a837b28eb5b232f5ce7b0bd9"
+                "reference": "2370a0af78b4ca0f028bacb3fb9c3d092ff0ae81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/02c19ae09a36ec83a837b28eb5b232f5ce7b0bd9",
-                "reference": "02c19ae09a36ec83a837b28eb5b232f5ce7b0bd9",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/2370a0af78b4ca0f028bacb3fb9c3d092ff0ae81",
+                "reference": "2370a0af78b4ca0f028bacb3fb9c3d092ff0ae81",
                 "shasum": ""
             },
             "require": {
@@ -1592,7 +1592,7 @@
             ],
             "description": "File manager for web",
             "homepage": "http://elfinder.org",
-            "time": "2016-07-25 00:34:19"
+            "time": "2016-09-12 01:53:22"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2482,16 +2482,16 @@
         },
         {
             "name": "unisharp/laravel-filemanager",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UniSharp/laravel-filemanager.git",
-                "reference": "8ffe49ae2b0b371c40563c37c0356ec484ff2ee9"
+                "reference": "ce305e54ca144a0d6fcfa5715dce56771b20ff58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/8ffe49ae2b0b371c40563c37c0356ec484ff2ee9",
-                "reference": "8ffe49ae2b0b371c40563c37c0356ec484ff2ee9",
+                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/ce305e54ca144a0d6fcfa5715dce56771b20ff58",
+                "reference": "ce305e54ca144a0d6fcfa5715dce56771b20ff58",
                 "shasum": ""
             },
             "require": {
@@ -2534,7 +2534,7 @@
                 "tinymce",
                 "upload"
             ],
-            "time": "2016-08-03 12:18:58"
+            "time": "2016-09-12 02:53:19"
         },
         {
             "name": "vlucas/phpdotenv",
