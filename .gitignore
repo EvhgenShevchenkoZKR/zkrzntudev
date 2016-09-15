@@ -4,3 +4,6 @@
 Homestead.yaml
 Homestead.json
 .env
+.idea/codeStyleSettings.xml
+.idea/misc.xml
+.idea/workspace.xml
