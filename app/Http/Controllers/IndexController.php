@@ -18,16 +18,30 @@ class IndexController extends Controller
   private $menu;
   private $paginationItem = 5;
   private $sidebarLimit = 10;
-  
+  private $horizontalLimit = 15;
+
   public function __construct()
   {
     $m = new Menu();
     $this->menu = $m->mainMenu();
   }
+
+  /**
+   * Get top and published news with different limits
+   */
+  private function getTopNews($limit) {
+    $topNews = News::select('*')
+    ->where('cover_show', true)
+    ->Where('published', true)
+    ->limit($limit)
+    ->get();
+
+    return $topNews;
+  }
   
   public function administrationPage(){
 
-    $topNews = News::where('cover_show', true)->get();
+    $topNews = $this->getTopNews($this->sidebarLimit);
 
     $quote = Quote::inRandomOrder()
       ->limit(1)
@@ -49,7 +63,9 @@ class IndexController extends Controller
   }
   
   public function showObjavas(){
-    $materials = Advert::select('*')->paginate($this->paginationItem);
+    $materials = Advert::select('*')
+      ->where('published', true)
+      ->paginate($this->paginationItem);
 
     $folder = 'objavas';
     $sinlge_link = 'objava';
@@ -60,7 +76,9 @@ class IndexController extends Controller
   }
   
   public function showNews(){
-    $materials = News::select('*')->paginate($this->paginationItem);
+    $materials = News::select('*')
+      ->where('published', true)
+      ->paginate($this->paginationItem);
     
     $folder = 'news';
     $sinlge_link = 'news';
@@ -73,7 +91,9 @@ class IndexController extends Controller
   public function showTag($slug){
 
     $tag = Tag::where('slug', $slug)->first();
-    $materials = $tag->news()->paginate($this->paginationItem);
+    $materials = $tag->news()
+      ->where('published', true)
+      ->paginate($this->paginationItem);
 
     $folder = 'news';
     $sinlge_link = 'news';
@@ -166,9 +186,7 @@ class IndexController extends Controller
       $relatedNews = array_slice($relatedNews, 0, 2);
       $relatedLeft = $totalRelated - 2;
 
-      $topNews = News::where('cover_show', true)
-        ->limit($this->sidebarLimit)
-        ->get();
+      $topNews = $this->getTopNews($this->sidebarLimit);
 
       $quote = Quote::inRandomOrder()
         ->limit(1)
@@ -219,7 +237,7 @@ class IndexController extends Controller
     $relatedNews = array_slice($relatedNews, 0, 2);
     $relatedLeft = $totalRelated - 2;
 
-    $topNews = News::where('cover_show', true)->limit($this->sidebarLimit)->get();
+    $topNews = $this->getTopNews($this->sidebarLimit);
 
     $quote = Quote::inRandomOrder()
       ->limit(1)
@@ -247,7 +265,7 @@ class IndexController extends Controller
 
   public function materialsPage($materials,$folder,$sinlge_link,$page_title,$image_prefix){
 
-    $topNews = News::where('cover_show', true)->get();
+    $topNews = $this->getTopNews($this->horizontalLimit);
 
     $quote = Quote::inRandomOrder()
       ->limit(1)

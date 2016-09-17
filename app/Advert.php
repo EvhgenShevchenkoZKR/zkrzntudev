@@ -7,6 +7,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Advert extends Model
 {
+    private $relatedLimit = 10; //limit of related objavas in block related
     protected $table = 'adverts';
   
     protected $fillable = [
@@ -47,7 +48,9 @@ class Advert extends Model
   public function getRelatedNews(){
     $relatedNews = $this::select('*')
       ->where('published', true)
+      ->Where('id', '<>', $this->id)
       ->orderBy('created_at', 'desc')
+      ->limit($this->relatedLimit)
       ->get()->all();
 
     return $relatedNews;

@@ -66,7 +66,9 @@ class News extends Model
     foreach ($tags as $tag){
       $related = $tag->news()->get();
       foreach ($related as $rel){
-        $relatedNews[] = $rel;
+        if($rel->id != $this->id){
+          $relatedNews[$rel->id] = $rel;
+        }
       }
     }
     return $relatedNews;

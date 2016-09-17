@@ -21,11 +21,17 @@ class Menu extends Model
    * @return array
    */
   public function mainMenu(){
-    $parent_menus = $this::where('parent', '=', 0)->orderBy('weight')->get();
+    $parent_menus = $this::where('parent', '=', 0)
+      ->where('published', true)
+      ->orderBy('weight')
+      ->get();
     $menus = [];
     foreach($parent_menus as $key=>$menu){
       $menus[$key] = $menu;
-      $submenus = $this::where('parent', '=', $menu->id)->orderBy('weight')->get();
+      $submenus = $this::where('parent', '=', $menu->id)
+        ->where('published', true)
+        ->orderBy('weight')
+        ->get();
       if(!empty($submenus)){
         $menus[$key]['submenus'] = $submenus;
       }

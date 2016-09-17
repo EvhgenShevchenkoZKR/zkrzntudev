@@ -56,7 +56,7 @@ class ParentPage extends Model
     foreach ($tags as $tag){
       $related = $tag->news()->get();
       foreach ($related as $rel){
-        $relatedNews[] = $rel;
+        $relatedNews[$rel->id] = $rel;
       }
     }
     return $relatedNews;
