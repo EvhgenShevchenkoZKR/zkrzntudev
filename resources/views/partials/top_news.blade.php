@@ -12,7 +12,7 @@
         <li>
         @endif
         <div class="topn-slide slide-wrapper">
-            <a href="news/{{$topnew->id}}">
+            <a href="/news/{{$topnew->slug}}">
             <img src="/images/news/{{$topnew->id}}/news_{{$topnew->cover_image}}" width="200px" height="150px"
             alt="{{$topnew->cover_alt}}"
             title="{{$topnew->cover_title}}"

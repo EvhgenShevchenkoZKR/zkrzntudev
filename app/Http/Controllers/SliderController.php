@@ -17,53 +17,7 @@ use App\Http\Requests\StoreUpdatedSliderRequest;
 class SliderController extends Controller
 {
   public function __construct() {
-    //TODO provide isAdmin middleware check here
-  }
 
-  //todo make slides deleting with files removing DONE
-
-  //todo make page to reorder sliders DONE
-
-  //TODO show some image at sliders page DONE
-
-  //TODO make delete link at sliders page also delete all records and files of slides (just record and folder) DONE
-  
-  //todo make some pages to create sliders - at first place DONE
-
-  //todo make last slider with bigger weight DONE
-
-  //todo add edit link`s to sliders page DONE
-
-  //todo make sliders page look pretty
-
-  //todo fix bug when there is slider without slides
-  
-  /**
-   * This is dummy function to watch how is slider working
-   */
-  public function show(){
-
-    $serializedDummy = 'list[1]=null&list[7]=1&list[10]=1&list[9]=null&list[8]=9&list[2]=null';
-
-    $pieces = explode("&", $serializedDummy);
-    $result = array();
-    foreach ($pieces as $peace){
-      $pic = explode('=',$peace);
-      $pic[0] = str_replace('list[', '', $pic[0]);
-      $pic[0] = str_replace(']', '', $pic[0]);
-      if(is_numeric($pic[0])){
-        $result[$pic[0]] = $pic[1];
-      }
-    }
-    foreach($result as $key=>$parent){
-      
-    }
-//    $serializedDummy = json_decode($serializedDummy, true);
-
-    $sliders = Slider::orderBy('weight')->get();
-
-    
-    return view('slider.owl', compact('sliders', $sliders));
   }
 
   public function index(){

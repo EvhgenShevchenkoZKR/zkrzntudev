@@ -10,14 +10,7 @@ use App\Tag;
 
 class TagController extends Controller
 {
-  public function index(){ 
-
-    $tags = Tag::all();
-
-    return view('tag.index', compact('tags', $tags));
-  }
-
-  public function create(){ 
+  public function create(){
 
     return view('tag.create');
   }

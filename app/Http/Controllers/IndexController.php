@@ -18,16 +18,31 @@ class IndexController extends Controller
   private $menu;
   private $paginationItem = 5;
   private $sidebarLimit = 10;
-  
+  private $horizontalLimit = 15;
+
   public function __construct()
   {
     $m = new Menu();
     $this->menu = $m->mainMenu();
   }
+
+  /**
+   * Get top and published news with different limits
+   */
+  private function getTopNews($limit) {
+    $topNews = News::select('*')
+    ->where('cover_show', true)
+    ->Where('published', true)
+    ->orderBy('created_at', 'desc')
+    ->limit($limit)
+    ->get();
+
+    return $topNews;
+  }
   
   public function administrationPage(){
 
-    $topNews = News::where('cover_show', true)->get();
+    $topNews = $this->getTopNews($this->sidebarLimit);
 
     $quote = Quote::inRandomOrder()
       ->limit(1)
@@ -49,7 +64,10 @@ class IndexController extends Controller
   }
   
   public function showObjavas(){
-    $materials = Advert::select('*')->paginate($this->paginationItem);
+    $materials = Advert::select('*')
+      ->where('published', true)
+      ->orderBy('created_at', 'desc')
+      ->paginate($this->paginationItem);
 
     $folder = 'objavas';
     $sinlge_link = 'objava';
@@ -60,78 +78,107 @@ class IndexController extends Controller
   }
   
   public function showNews(){
-    $materials = News::select('*')->paginate($this->paginationItem);
+    $materials = News::select('*')
+      ->where('published', true)
+      ->orderBy('created_at', 'desc')
+      ->paginate($this->paginationItem);
     
     $folder = 'news';
     $sinlge_link = 'news';
     $page_title = 'Новини';
     $image_prefix = 'news'; //news
-    
+
     return $this->materialsPage($materials,$folder,$sinlge_link,$page_title,$image_prefix);
   }
   
   public function showTag($slug){
 
     $tag = Tag::where('slug', $slug)->first();
-    $materials = $tag->news()->paginate($this->paginationItem);
+    $materials = $tag->news()
+      ->where('published', true)
+      ->orderBy('created_at', 'desc')
+      ->paginate($this->paginationItem);
+    if($materials) {
+      $folder = 'news';
+      $sinlge_link = 'news';
+      $page_title = 'Новини з тегом ' . $tag->title;
+      $image_prefix = 'news'; //news
 
-    $folder = 'news';
-    $sinlge_link = 'news';
-    $page_title = 'Новини з тегом ' . $tag->title;
-    $image_prefix = 'news'; //news
-    
-    return $this->materialsPage($materials,$folder,$sinlge_link,$page_title,$image_prefix);
+      return $this->materialsPage($materials, $folder, $sinlge_link, $page_title, $image_prefix);
+    }
+    else {
+      return view('404');
+    }
   }
 
   public function showSingleNews($slug){
-  
-    $material = News::where('slug', $slug)->first();
+    $segments = \Request::segments();
+    if($segments[0] == 'tvorchist'){
+      $material = News::where('slug', $slug)
+          ->where('author_name', 'Життя коледжу')
+          ->first();
+    }
+    else {
+      $material = News::where('slug', $slug)->first();
+    }
+    if($material){
+      $relatedNews = $material->getRelatedNews();
+      $material_folder = 'news';
+      $material_sinlge_link = 'news';
+      $material_image_prefix = 'news';
+      $folder = 'news';
+      $sinlge_link = 'news';
+      $image_prefix = 'news';
 
-    $relatedNews = $material->getRelatedNews();
-    $material_folder = 'news';
-    $material_sinlge_link = 'news';
-    $material_image_prefix = 'news';
-    $folder = 'news';
-    $sinlge_link = 'news';
-    $image_prefix = 'news';
-
-    return $this->materialPage(
-      $material,$relatedNews,$folder,$sinlge_link,$image_prefix,$material_folder,
-      $material_image_prefix,$material_sinlge_link);
+      return $this->materialPage(
+          $material,$relatedNews,$folder,$sinlge_link,$image_prefix,$material_folder,
+          $material_image_prefix,$material_sinlge_link);
+    }
+    else {
+      return view('404');
+    }
   }
   
   public function showSingleChild($slug){
     
     $material = ChildPage::where('slug', $slug)->first();
-    
-    $relatedNews = $material->getRelatedNews();
-    $material_folder = 'child';
-    $material_sinlge_link = 'child';
-    $material_image_prefix = 'small';
-    $folder = 'news';
-    $sinlge_link = 'news';
-    $image_prefix = 'news';
+    if($material) {
+      $relatedNews = $material->getRelatedNews();
+      $material_folder = 'child';
+      $material_sinlge_link = 'child';
+      $material_image_prefix = 'small';
+      $folder = 'news';
+      $sinlge_link = 'news';
+      $image_prefix = 'news';
 
-    return $this->materialPage(
-      $material,$relatedNews,$folder,$sinlge_link,$image_prefix,$material_folder,
-      $material_image_prefix,$material_sinlge_link);
+      return $this->materialPage(
+          $material, $relatedNews, $folder, $sinlge_link, $image_prefix, $material_folder,
+          $material_image_prefix, $material_sinlge_link);
+    }
+    else {
+      return view('404');
+    }
   }
 
   public function showSingleObjava($slug){
 
     $material = Advert::where('slug', $slug)->first();
+    if($material) {
+      $relatedNews = $material->getRelatedNews();
+      $material_folder = 'objavas';
+      $material_sinlge_link = 'objava';
+      $material_image_prefix = 'small';
+      $folder = 'objavas';
+      $sinlge_link = 'objava';
+      $image_prefix = 'small';
 
-    $relatedNews = $material->getRelatedNews();
-    $material_folder = 'objavas';
-    $material_sinlge_link = 'objava';
-    $material_image_prefix = 'small';
-    $folder = 'objavas';
-    $sinlge_link = 'objava';
-    $image_prefix = 'small';
-
-    return $this->materialPage(
-      $material,$relatedNews,$folder,$sinlge_link,$image_prefix,$material_folder,
-      $material_image_prefix,$material_sinlge_link);
+      return $this->materialPage(
+          $material, $relatedNews, $folder, $sinlge_link, $image_prefix, $material_folder,
+          $material_image_prefix, $material_sinlge_link);
+    }
+    else {
+      return view('404');
+    }
   }
 
   private function materialPageBreadcrumbs($material,$folder){
@@ -141,6 +188,10 @@ class IndexController extends Controller
     $second = $material;
     if($first){
       $first['breadcrumb_url'] = '/' . $segments[0];
+    }
+    elseif($segments[0] == 'tvorchist'){
+      $first = Menu::where('url', 'news')->first();
+      $first['breadcrumb_url'] = '/news';
     }
     else {
       $first = ParentPage::where('id', $material->parent_id)->first();
@@ -166,9 +217,7 @@ class IndexController extends Controller
       $relatedNews = array_slice($relatedNews, 0, 2);
       $relatedLeft = $totalRelated - 2;
 
-      $topNews = News::where('cover_show', true)
-        ->limit($this->sidebarLimit)
-        ->get();
+      $topNews = $this->getTopNews($this->sidebarLimit);
 
       $quote = Quote::inRandomOrder()
         ->limit(1)
@@ -219,7 +268,7 @@ class IndexController extends Controller
     $relatedNews = array_slice($relatedNews, 0, 2);
     $relatedLeft = $totalRelated - 2;
 
-    $topNews = News::where('cover_show', true)->limit($this->sidebarLimit)->get();
+    $topNews = $this->getTopNews($this->sidebarLimit);
 
     $quote = Quote::inRandomOrder()
       ->limit(1)
@@ -247,7 +296,7 @@ class IndexController extends Controller
 
   public function materialsPage($materials,$folder,$sinlge_link,$page_title,$image_prefix){
 
-    $topNews = News::where('cover_show', true)->get();
+    $topNews = $this->getTopNews($this->horizontalLimit);
 
     $quote = Quote::inRandomOrder()
       ->limit(1)

@@ -4,8 +4,7 @@
             <div class="slide-wrapper">
                 <a href="{{url("/news/$top_new->slug")}}">
                 <img class="lazyOwl"
-                     data-src="{{url("images/news")}}/{{$top_new->id}}/{{$top_new->cover_image}}"
-                     style="width: 100%; height: 350px; max-height: 350px; min-height: 350px;"
+                     style="height: 350px; max-height: 350px; min-height: 350px; margin: auto; display: block"
                      src="{{url("images/news")}}/{{$top_new->id}}/{{$top_new->cover_image}}"
                      alt="{{$top_new->cover_alt}}"
                      title="{{$top_new->cover_title}}"

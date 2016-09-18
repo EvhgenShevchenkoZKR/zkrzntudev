@@ -16,15 +16,8 @@ class HomepageController extends Controller
 {
   public function homepageSlider(){
 
-    $parent_menus = Menu::where('parent', '=', 0)->orderBy('weight')->get();
-    $menus = [];
-    foreach($parent_menus as $key=>$menu){
-      $menus[$key] = $menu;
-      $submenus = Menu::where('parent', '=', $menu->id)->orderBy('weight')->get();
-      if(!empty($submenus)){
-        $menus[$key]['submenus'] = $submenus;
-      }
-    }
+    $m = new Menu();
+    $menus = $m->mainMenu();
 
     $sliders = Slider::orderBy('weight')->get();
 

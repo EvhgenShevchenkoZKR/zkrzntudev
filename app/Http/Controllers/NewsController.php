@@ -15,20 +15,9 @@ use File;
 
 class NewsController extends Controller
 {
-//  private $menu;
 
-  public function __construct()
-  {
-//    $parent_menus = Menu::where('parent', '=', 0)->orderBy('weight')->get();
-//    $menus = [];
-//    foreach($parent_menus as $key=>$menu){
-//      $menus[$key] = $menu;
-//      $submenus = Menu::where('parent', '=', $menu->id)->orderBy('weight')->get();
-//      if(!empty($submenus)){
-//        $menus[$key]['submenus'] = $submenus;
-//      }
-//    }
-//    $this->menu = $menus;
+
+  public function __construct() {
   }
 
   public function create(){ 
@@ -36,24 +25,7 @@ class NewsController extends Controller
     return view('news.create', compact('tags', $tags));
   }
   
-  public function index(){ 
-    
-//    $news = News::select('*')->paginate(5);
-//
-//    $topNews = News::where('cover_show', true)->get();
-//
-//    $quote = Quote::inRandomOrder()
-//      ->limit(1)
-//      ->get();
-//
-//    return view('news.index', [
-//      'news' => $news,
-//      'menus' => $this->menu,
-//      'topNews' => $topNews,
-//      'quote' => $quote,
-//    ]);
-  }
-  
+
   public function show($slug) {
     
     $news = News::where('slug', $slug)->first();
@@ -181,7 +153,9 @@ class NewsController extends Controller
   
   public function adminIndex() {
     
-    $news = News::select('id','title', 'published')->paginate(5);
+    $news = News::select('*')
+    ->orderBy('created_at', 'desc')
+    ->paginate(25);
     
     return view('news.admin_index', ['news' => $news]);
   }

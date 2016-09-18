@@ -73,6 +73,10 @@
             <div class="nbody">
                 {!! clean($material->body) !!}
             </div>
+            <div class="addthis-wrapper">
+                <h4 class="share-label">Поділитися</h4>
+                <div class="addthis_inline_share_toolbox"></div>
+            </div>
             <div class="n-author">{{$material->author_name}}</div>
         </div>
     </div>
@@ -138,8 +142,17 @@
 @extends('partials.footer')
 
 @section('footerscripts')
-    <script>
+        {{--Addthis --}}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57dc0ca93fa6eb68"></script>
+        <script>
         $(document).ready(function() {
+
+            $images = $('.nbody img');
+            $images.each(function( i ) {
+                if ($(this).attr('style') == 'margin-left:auto;margin-right:auto;') {
+                    $(this).css("display", "block");
+                }
+            });
 
             $('#more').click(function(){
                 more();

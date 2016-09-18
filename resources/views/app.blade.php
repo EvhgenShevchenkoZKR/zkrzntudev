@@ -4,15 +4,15 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
-    {{--<link rel="shortcut icon" href="/public/images/icons/favicon.ico">--}}
-    <link rel="icon" type="image/png" href="/images/icons/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/packages/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/packages/bootstrap/bootstrap.min.css">
+    <script type="text/javascript" src="/packages/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/totop/jquery.goup.js"></script>
+    <link rel="shortcut icon" href="/images/icons/favicon.ico">
     <script type="text/javascript" src="/vendor/js/smartmenu/jquery.smartmenus.js"></script>
     <link href="/css/smartmenu/sm-core-css.css" rel="stylesheet" type="text/css" />
     <link href="/css/smartmenu/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
 
     @yield('headerstyles')
 </head>
@@ -56,5 +56,20 @@
 </div>
 @yield('footerscripts')
 @yield('footer')
+<script>
+    $(document).ready(function() {
+        //footer sticked to bottom script
+        if ($(document).height() <= $(window).height()) {
+            $('.zkr-footer').addClass('fixed-footer');
+        }
+
+        //Scroll top
+        $.goup({
+            trigger: 1000,
+            hideUnderWidth: 1000,
+            bottomOffset: 120
+        });
+    });
+</script>
 </body>
 </html>

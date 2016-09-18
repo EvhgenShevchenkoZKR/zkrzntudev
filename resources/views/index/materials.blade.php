@@ -44,11 +44,19 @@
         <div class="news-wrapper clearfix {{(++$count%2 ? "odd" : "even")}}">
             <div class="n-image col-md-3">
                 <a href="/{{$sinlge_link}}/{{$material->slug}}">
+                @if(!empty($material->cover_image))
                 <img src="/images/{{$folder}}/{{$material->id}}/{{$image_prefix}}_{{$material->cover_image}}"
                  alt="{{$material->cover_alt}}"
                  title="{{$material->cover_title}}"
                  width="250px" height="180px"
                 />
+                @else
+                <img src="/images/icons/main-korp.jpg"
+                 alt="{{$material->cover_alt}}"
+                 title="{{$material->cover_title}}"
+                 width="250px" height="180px"
+                />
+                @endif
                 </a>
             </div>
             <div class="n-text col-md-9">

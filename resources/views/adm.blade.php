@@ -4,9 +4,10 @@
     <title>Laravel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/packages/bootstrap/bootstrap.min.css">
+    <script type="text/javascript" src="/packages/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/packages/jquery/jquery.min.js"></script>
+    <link rel="shortcut icon" href="/images/icons/favicon_adm.ico">
 
     <script src="/js/admin/hideshow.js"></script>
     {{--Main css files compiled from less via gulp--}}
@@ -95,5 +96,13 @@
     </div>
 </div>
 @yield('footerscripts')
+<script>
+    $(document).ready(function() {
+//footer sticked to bottom script
+        if ($(document).height() <= $(window).height()) {
+            $('.vua-footer').addClass('fixed-footer');
+        }
+    });
+</script>
 </body>
 </html>

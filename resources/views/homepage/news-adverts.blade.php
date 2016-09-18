@@ -10,10 +10,18 @@
                     <div class="fn-created">{{$news->created_at->format('d.m.Y, H:i')}}</div>
                     <div class="fn-image">
                         <a href="/news/{{$news->slug}}">
+                        @if($news->cover_image)
                         <img src="images/news/{{$news->id}}/thumbnail_{{$news->cover_image}}"
                              alt="{{$news->cover_alt}}"
                              title="{{$news->cover_title}}"
                         >
+                        @else
+                        <img src="/images/icons/main-korp.jpg"
+                             alt="{{$news->cover_alt}}"
+                             title="{{$news->cover_title}}"
+                             width="100px" height="100px"
+                        />
+                        @endif
                         </a>
                     </div>
                     <div class="fn-fields">
