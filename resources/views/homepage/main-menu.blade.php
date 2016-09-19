@@ -1,8 +1,10 @@
 @section('navigation')
     <div class="main-menu-wrapper clearfix">
         <div class="left-nav-wrapper col-md-6">
-            <div class="site-logo pull-left col-md-2"><a href="/"><img src="/images/icons/gerb.png" width="60px"></a></div>
-            <h2 class="site-slogan col-md-10"><span class="ss-inside">Запорізький коледж радіоелектроніки ЗНТУ</span></h2>
+            {{--<div class="site-logo pull-left col-md-2"><a href="/"><img src="/images/icons/gerb.png" width="60px"></a></div>--}}
+            <div class="site-logo pull-left col-md-2"><a href="/"><img id="clock-logo" src="/images/icons/zkr_zntu.gif" width="60px"></a></div>
+            {{--<div class="site-clock col-md-2">&nbsp;</div>--}}
+            <h2 class="site-slogan col-md-10"><span class="ss-inside"><a href="/">Запорізький коледж радіоелектроніки ЗНТУ</a></span></h2>
         </div>
         <ul id="main-menu" class="sm sm-blue">
             @foreach($menus as $menu)

@@ -16,7 +16,7 @@ use App\Http\Requests;
 class IndexController extends Controller
 {
   private $menu;
-  private $paginationItem = 5;
+  private $paginationItem = 8;
   private $sidebarLimit = 10;
   private $horizontalLimit = 15;
 

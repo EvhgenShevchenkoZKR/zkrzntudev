@@ -48,13 +48,13 @@
                 <img src="/images/{{$folder}}/{{$material->id}}/{{$image_prefix}}_{{$material->cover_image}}"
                  alt="{{$material->cover_alt}}"
                  title="{{$material->cover_title}}"
-                 width="250px" height="180px"
+                     width="100%" height="auto"
                 />
                 @else
                 <img src="/images/icons/main-korp.jpg"
                  alt="{{$material->cover_alt}}"
                  title="{{$material->cover_title}}"
-                 width="250px" height="180px"
+                 width="100%" height="auto"
                 />
                 @endif
                 </a>

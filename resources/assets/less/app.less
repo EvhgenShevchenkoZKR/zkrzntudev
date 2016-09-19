@@ -223,12 +223,17 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #535353;
+  background: #F8F8F8;
 }
 
 p {
   //text-align: justify;
 }
 .top-news {
+  background-color: white;
+  padding: 10px 20px 40px 20px;
+  border: 1px solid lightgrey;
+  box-shadow: 0 1px 3px 2px #797979;
   a {
     text-decoration: none;
     outline: none;
@@ -243,9 +248,10 @@ p {
   .news-ttitle {
     font-weight: bold;
     color: #535353;
+    margin-bottom: 5px;
   }
   .news-slide-bottom {
-    height: 223px;
+    height: 274px;
     overflow: hidden;
   }
   .owl-page.active {
@@ -269,6 +275,7 @@ p {
   .n-text {
     width: 75%;
     margin: auto;
+
     h4 {
       font-weight: bold;
       margin: 4px 0;
@@ -352,6 +359,13 @@ p {
   .n-image {
     overflow: hidden;
     padding: 0;
+    text-align: center;
+    img {
+      padding: 10px;
+      border-radius: 10px;
+      border: 3px solid #FFB273;
+
+    }
   }
 }
 .adm-wrapper {
@@ -475,7 +489,7 @@ div.unslider {
 
 .n-cover {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   img {
     border-radius: 15px;
   }
@@ -541,6 +555,10 @@ div.unslider {
   }
   .n-text {
     font-size: 15px;
+    background-color: white;
+    padding: 10px 20px 40px 20px;
+    border: 1px solid lightgrey;
+    box-shadow: 0 1px 3px 2px #797979;
   }
   .nbody {
     margin-top: 10px;
@@ -604,6 +622,10 @@ hr.divider.show {
 }
 
 .advnews {
+  background-color: white;
+  padding: 10px 20px 40px 20px;
+  border: 1px solid lightgrey;
+  box-shadow: 0 1px 3px 2px #797979;
   .tabs {
     color: @blue;
     text-transform: uppercase;
@@ -707,7 +729,7 @@ hr.divider.show {
   border-bottom: 1px solid #bcbcbc;
 }
 .massonry-wrapper {
-  margin: 15px 0;
+  margin: 25px 0 20px 0;
   text-align: center;
   .massonry-wrapper-inner {
     max-width: 1300px;
@@ -723,7 +745,10 @@ hr.divider.show {
     font-size: 13px;
     display: inline-block;
     vertical-align: top;
-    margin-bottom: 3px;
+    margin-bottom: 8px;
+    margin-right: 6px;
+    border: 1px solid @blue;
+    box-shadow: 1px 3px 5px 1px #797979;
     transition: background-color 0.6s ease;
     min-width: 300px;
 
@@ -791,7 +816,19 @@ hr.divider.show {
     font-style: italic;
     margin: 13px 0;
     font-size: 24px;
+    a {
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+
+    }
   }
+  //.site-clock {
+  //  background-image: url(images/zkr_zntu.gif);
+  //  height: 60px;
+  //  background-size: 143px;
+  //  background-repeat: no-repeat;
+  //}
 }
 .main-menu-wrapper {
   //background-color: @blue;
@@ -800,11 +837,16 @@ hr.divider.show {
     position: relative;
   }
   .site-logo {
-    //margin-left: 40px;
+    text-align: center;
     img {
-      width: 60px;
+      //width: 60px;
+      //height: 50px;
+      //margin-top: 2px;
+      width: 100%;
       height: 50px;
-      margin-top: 2px;
+      margin-top: 4px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 14px 2px rgba(0, 0, 0, 0.6);
     }
   }
   #main-menu.sm-blue {

@@ -52,7 +52,7 @@
             <img src="/images/{{$material_folder}}/{{$material->id}}/{{$material_image_prefix}}_{{$material->cover_image}}"
              alt="{{$material->cover_alt}}"
              title="{{$material->cover_title}}"
-             width="700px" height="380px"
+             width="600px" height="450px"
             />
         </div>
         @endif

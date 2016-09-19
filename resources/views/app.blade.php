@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="/packages/jquery/jquery.min.js"></script>
@@ -69,6 +68,10 @@
             hideUnderWidth: 1000,
             bottomOffset: 120
         });
+//        clock zkrzntu logo reload
+        var imagefile = document.getElementById("clock-logo");
+        var src = imagefile.src;
+        imagefile.src = src+"?a="+Math.random();
     });
 </script>
 </body>
