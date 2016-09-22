@@ -30,14 +30,19 @@
 @extends('homepage.main-menu')
 
 @section('slider')
+    <div class="gerb-wrapper">
+        <div class="clock-logo-wrapper"><a href="/"><img id="clock-logo" src="/images/icons/zkr_bg.gif" width="130px"></a></div>
+        {{--<div class="clock-logo-wrapper"><a href="/"><img id="clock-logo" src="/images/icons/zkr_zntu.gif" width="100px"></a></div>--}}
+        {{--<div class="clock-gerb-wrapper"><a href="/"><img src="/images/icons/gerb.png" width="150px"></a></div>--}}
+    </div>
     <div id="owl-example" class="owl-carousel">
         @foreach($sliders as $slider)
             <div class="slide-wrapper">
                 <img class="lazyOwl"
                      {{$slide = $slider->slides()->get()->random()}}
-                     data-src="{{url("images/slider")}}/{{$slider->id}}/{{$slide->image}}"
-                     style="width: 100%; height: auto; max-height: 450px;"
-                     src="{{url("images/slider")}}/{{$slider->id}}/{{$slide->image}}"
+                     {{--data-src="{{url("images/slider")}}/{{$slider->id}}/{{$slide->image}}"--}}
+                     style="width: 100%; height: 500px !important; max-height: 500px; background-image:url({{url("images/slider")}}/{{$slider->id}}/{{$slide->image}});"
+                     {{--src="{{url("images/slider")}}/{{$slider->id}}/slide_{{$slide->image}}"--}}
                      alt="{{$slide->alt}}"
                      title="{{$slide->title}}"
                 >
@@ -80,8 +85,8 @@
                 stopOnHover: true,
                 navigationText: false,
                 responsive: true,
-                lazyLoad: true,
-                lazyFollow: true,
+//                lazyLoad: true,
+//                lazyFollow: true,
                 addClassActive: true,
                 pagination: false
             });

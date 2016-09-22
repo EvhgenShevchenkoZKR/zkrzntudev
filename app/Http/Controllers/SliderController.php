@@ -200,22 +200,65 @@ class SliderController extends Controller
       }
     }
   }
-  
+
+//  protected function createImage($file, $fileName, $nodeId){
+//    $image = getimagesize($file);
+//    $baseWidth = $image[0];
+//    $baseHeight = $image[1];
+//    if($baseWidth >= $baseHeight){
+//      $equalWidth = $baseHeight;
+//      $equalHeight = $baseHeight;
+//    }
+//    else {
+//      $equalWidth = $baseWidth;
+//      $equalHeight = $baseWidth;
+//    }
+//    //saving original image
+//    $file->move(
+//        base_path() . "/public/images/news/$nodeId/", $fileName
+//    );
+//
+//    //crop and saving slide size image
+//    $manipulation = Image::make(base_path() . "/public/images/news/$nodeId/$fileName");
+//    $manipulation->resize(800, 600);
+//    $manipulation->save(base_path() . "/public/images/news/$nodeId/news_$fileName");
+//
+//    //crop and saving thumbnail size image
+//    $manipulation = Image::make(base_path() . "/public/images/news/$nodeId/$fileName");
+//    $manipulation->crop($equalWidth,$equalHeight);
+//    $manipulation->resize(100, 100);
+//    $manipulation->save(base_path() . "/public/images/news/$nodeId/thumbnail_$fileName");
+//  }
+
   protected function createSlideImage($file, $fileName, $sliderId){
     //saving original image
+//    $image = getimagesize($file);
+//    $baseWidth = $image[0];
+//    $baseHeight = $image[1];
+//    if($baseWidth >= $baseHeight){
+//      $equalWidth = $baseHeight;
+//      $equalHeight = $baseHeight;
+//    }
+//    else {
+//      $equalWidth = $baseWidth;
+//      $equalHeight = $baseWidth;
+//    }
     $file->move(
       base_path() . "/public/images/slider/$sliderId/", $fileName
     );
-  
-    //crop and saving slide size image
-    $manipulation = Image::make(base_path() . "/public/images/slider/$sliderId/$fileName");
-    $manipulation->resize(800, 600);
-    $manipulation->save(base_path() . "/public/images/slider/$sliderId/slide_$fileName");
-  
-    //crop and saving thumbnail size image
-    $manipulation = Image::make(base_path() . "/public/images/slider/$sliderId/$fileName");
-    $manipulation->resize(100, 100);
-    $manipulation->save(base_path() . "/public/images/slider/$sliderId/thumbnail_$fileName");
+
+//    //TODO последняя картинка в слайдере кропнута, а вторая нет, какая лучше?
+//    //TODO но кропнуть маленькую картинк - получишь пипец
+//    //crop and saving slide size image
+//    $manipulation = Image::make(base_path() . "/public/images/slider/$sliderId/$fileName");
+//    $manipulation->crop($equalWidth,450);
+//    $manipulation->resize(1400, 450);
+//    $manipulation->save(base_path() . "/public/images/slider/$sliderId/slide_$fileName");
+//
+//    //crop and saving thumbnail size image
+//    $manipulation = Image::make(base_path() . "/public/images/slider/$sliderId/$fileName");
+//    $manipulation->resize(100, 100);
+//    $manipulation->save(base_path() . "/public/images/slider/$sliderId/thumbnail_$fileName");
   }
 
   protected function updatefilename($file) {

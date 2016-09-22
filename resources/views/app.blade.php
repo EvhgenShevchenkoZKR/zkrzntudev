@@ -62,16 +62,41 @@
             $('.zkr-footer').addClass('fixed-footer');
         }
 
-        //Scroll top
+        //Scroll to top button
         $.goup({
             trigger: 1000,
             hideUnderWidth: 1000,
-            bottomOffset: 120
+            bottomOffset: 120,
+            zIndex: 300
         });
-//        clock zkrzntu logo reload
-        var imagefile = document.getElementById("clock-logo");
-        var src = imagefile.src;
-        imagefile.src = src+"?a="+Math.random();
+
+        //hide gerb
+        if($('.gerb-wrapper').length){
+            //clock zkrzntu logo reload
+            $('.content-wrapper').css('z-index', '101');
+            $('.slider-wrapper').css('margin-bottom', '0');
+            var imagefile = document.getElementById("clock-logo");
+            var src = imagefile.src;
+            imagefile.src = src+"?a="+Math.random();
+
+            var link = $('.content-wrapper');
+            var toPosition = link.position().top - 225;
+
+            var interval = setInterval(function() {
+                if ($(window).scrollTop() >= toPosition) {
+                    $('.navigation').css('z-index', '200');
+                    $('.site-logo img').fadeIn('fast');
+                    $('.gerb-wrapper').fadeOut('fast');
+                }
+                else if ($(window).scrollTop() < toPosition) {
+                    $('.site-logo img').fadeOut();
+                    $('.navigation').css('z-index', '100');
+                    $('.gerb-wrapper').fadeIn();
+                }
+            }, 250);
+        }
+
+
     });
 </script>
 </body>
