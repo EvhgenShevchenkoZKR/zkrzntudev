@@ -2,40 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca905572-7611-4058-99a0-67fd7fdb3cac" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\24\1366x768 (27)_710.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\24\1366x768 (28)_515.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\24\slide_1366x768 (27)_710.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\24\slide_1366x768 (28)_515.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\24\thumbnail_1366x768 (27)_710.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\24\thumbnail_1366x768 (28)_515.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\25\1366x768 (38)_247.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\25\slide_1366x768 (38)_247.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\25\thumbnail_1366x768 (38)_247.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\27\1366x768 (32)_738.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\27\slide_1366x768 (32)_738.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\27\slide_wallpaper-1571776_279.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\27\thumbnail_1366x768 (32)_738.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\27\thumbnail_wallpaper-1571776_279.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\27\wallpaper-1571776_279.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\28\1366x768 (31)_222.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\28\slide_1366x768 (31)_222.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\28\thumbnail_1366x768 (31)_222.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\slide_wallpaper-375066_771.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\slide_wallpaper-405756_261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\slide_wallpaper-844809_530.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\thumbnail_wallpaper-375066_771.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\thumbnail_wallpaper-405756_261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\thumbnail_wallpaper-844809_530.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\wallpaper-375066_771.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\wallpaper-405756_261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\admin\Code\zkr\public\images\slider\29\wallpaper-844809_530.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SliderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SliderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/less/app.less" afterPath="$PROJECT_DIR$/resources/assets/less/app.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/homepage/main-menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/homepage/main-menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/homepage/slider.blade.php" afterPath="$PROJECT_DIR$/resources/views/homepage/slider.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/29/172026_165.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/27/Dnepropetrovsk1_292.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/images/bg2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/24/haphal_01_216.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/.tmb/l1_YmFzaWNQYWdlcy8xMzY2eDc2OCAoNCkuanBn1474107556.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/.tmb/l1_YmFzaWNQYWdlcy8xMzY2eDc2OCAoNSkuanBn1474107556.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/.tmb/l1_YmFzaWNQYWdlcy8xMzY2eDc2OCAoNikuanBn1474107556.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/images/roll_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/29/slide_172026_165.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/27/slide_Dnepropetrovsk1_292.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/24/slide_haphal_01_216.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/25/slide_stroitelstvo-novyx-mostov-nochyu_749.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/28/slide_stroitelstvo-novyx-mostov-nochyu_785.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/24/slide_zdanie_odesskogo_teatra_opery_i_baleta_1_936.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/25/stroitelstvo-novyx-mostov-nochyu_749.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/28/stroitelstvo-novyx-mostov-nochyu_785.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/techno28/techno28_allfont_ru.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/29/thumbnail_172026_165.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/27/thumbnail_Dnepropetrovsk1_292.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/24/thumbnail_haphal_01_216.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/25/thumbnail_stroitelstvo-novyx-mostov-nochyu_749.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/28/thumbnail_stroitelstvo-novyx-mostov-nochyu_785.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/24/thumbnail_zdanie_odesskogo_teatra_opery_i_baleta_1_936.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/slider/24/zdanie_odesskogo_teatra_opery_i_baleta_1_936.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icons/zkr_bg.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lar3.local.iws" />
@@ -815,7 +806,13 @@
       <option name="project" value="LOCAL" />
       <updated>1474301481559</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="#changed header at last">
+      <created>1474556698098</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1474556698098</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -828,6 +825,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24781573" sideWeight="0.506135" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26666668" sideWeight="0.49386504" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924527" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -836,7 +834,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -887,7 +884,8 @@
     <MESSAGE value="#full ubuntu folder" />
     <MESSAGE value="#gitignore fix" />
     <MESSAGE value="Merge branch 'master' of github.com:EvhgenShevchenkoZKR/zkrzntudev&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;public/css/app.css.map&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of github.com:EvhgenShevchenkoZKR/zkrzntudev&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;public/css/app.css.map&#10;" />
+    <MESSAGE value="#changed header at last" />
+    <option name="LAST_COMMIT_MESSAGE" value="#changed header at last" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
