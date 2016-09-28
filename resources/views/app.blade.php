@@ -13,6 +13,7 @@
     <link href="/css/smartmenu/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/css/app.css">
 
+
     @yield('headerstyles')
 </head>
 <body>
@@ -72,28 +73,27 @@
 
         //hide gerb
         if($('.gerb-wrapper').length){
-            //clock zkrzntu logo reload
-            $('.content-wrapper').css('z-index', '101');
             $('.slider-wrapper').css('margin-bottom', '0');
             var imagefile = document.getElementById("clock-logo");
             var src = imagefile.src;
             imagefile.src = src+"?a="+Math.random();
 
             var link = $('.content-wrapper');
-            var toPosition = link.position().top - 225;
+            var toPosition = link.position().top - 280;
 
             var interval = setInterval(function() {
                 if ($(window).scrollTop() >= toPosition) {
-                    $('.navigation').css('z-index', '200');
                     $('.site-logo img').fadeIn('fast');
-                    $('.gerb-wrapper').fadeOut('fast');
+                    $('.gerb-wrapper').slideUp('slow');
                 }
                 else if ($(window).scrollTop() < toPosition) {
                     $('.site-logo img').fadeOut();
-                    $('.navigation').css('z-index', '100');
-                    $('.gerb-wrapper').fadeIn();
+                    $('.gerb-wrapper').slideDown('slow');
                 }
-            }, 250);
+            }, 0);
+        }
+        else {
+            $('.site-logo img').css('display', 'block');
         }
 
 

@@ -27,7 +27,7 @@
 .slide-title-wrapper .slide-title-text {
     font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 40px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.9);
 }
 .slide-title-wrapper .slide-title-text:after {
     content: '';

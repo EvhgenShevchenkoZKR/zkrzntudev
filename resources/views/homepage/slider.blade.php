@@ -31,9 +31,7 @@
 
 @section('slider')
     <div class="gerb-wrapper">
-        <div class="clock-logo-wrapper"><a href="/"><img id="clock-logo" src="/images/icons/zkr_bg.gif" width="130px"></a></div>
-        {{--<div class="clock-logo-wrapper"><a href="/"><img id="clock-logo" src="/images/icons/zkr_zntu.gif" width="100px"></a></div>--}}
-        {{--<div class="clock-gerb-wrapper"><a href="/"><img src="/images/icons/gerb.png" width="150px"></a></div>--}}
+        <div class="clock-logo-wrapper"><a href="/"><img id="clock-logo" src="/images/icons/gerb_bg_green.png" width="130px"></a></div>
     </div>
     <div id="owl-example" class="owl-carousel">
         @foreach($sliders as $slider)
