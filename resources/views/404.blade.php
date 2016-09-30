@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{--<link rel="stylesheet" type="text/css" href="/css/app.css">--}}
+    <link rel="shortcut icon" href="/images/icons/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/linemode.css">
+    <title>Помилка 404</title>
+    <meta name="keywords" content="зкр коледж ЗКР ЗНТУ">
+    <meta name="description" content="Помилка 404 Запорізького коледжу електроніки">
 </head>
 <body class="page-404">
     <h1>Помилка 404</h1>

@@ -12,8 +12,6 @@
     <link href="/css/smartmenu/sm-core-css.css" rel="stylesheet" type="text/css" />
     <link href="/css/smartmenu/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/css/app.css">
-
-
     @yield('headerstyles')
 </head>
 <body>
@@ -38,7 +36,7 @@
 </div>
 
 <div class="content-wrapper clearfix col-md-12">
-    <div class="col-md-10">
+    <div class="col-md-10 content-md-10">
         @yield('content')
     </div>
     <div class="col-md-2">

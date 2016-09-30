@@ -8,7 +8,7 @@
             <div class="plate-wrapper">
                 <a href="/{{$plate->url}}">
                 <div class="plate-wrapper-inner">
-                    <img src="images/massonry/{{$plate->id}}/thumbnail_{{$plate->image}}"
+                    <img src="images/massonry/{{$plate->id}}/{{$plate->image}}"
                          alt="{{$plate->image_alt}}"
                          title="{{$plate->image_title}}"
                     >

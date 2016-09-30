@@ -45,6 +45,7 @@ html {
 	word-wrap: break-word;
 	font-family: cern, monospace;
 	line-height: 1.5em;
+	max-width: 100%;
 }
 
 body {
@@ -218,51 +219,21 @@ form, input, button, select, textarea {display: none}
 	box-shadow: 0 0 5px;
 }
 
-/*#cmd-cursor.wait {
-  -webkit-animation: blink 2s linear 0s infinite;
-  -moz-animation: blink 2s linear 0s infinite;
-  -ms-animation: blink 2s linear 0s infinite;
-  -o-animation: blink 2s linear 0s infinite;
-  animation: blink 2s linear 0s infinite;
-}
-
-@-webkit-keyframes blink {
-  0%   { background: #0a0 }
-  47%  { background: hsl(150, 100%, 50%); }
-  50%  { background: #000; box-shadow: none; }
-  97%  { background: #000; box-shadow: none; }
-  100% { background: hsl(150, 100%, 50%); }
-}
-
-@-moz-keyframes blink {
-  0%   { background: #0a0 }
-  47%  { background: hsl(150, 100%, 50%); }
-  50%  { background: #000; box-shadow: none; }
-  97%  { background: #000; box-shadow: none; }
-  100% { background: hsl(150, 100%, 50%); }
-}
-
-@-ms-keyframes blink {
-  0%   { background: #0a0 }
-  47%  { background: hsl(150, 100%, 50%); }
-  50%  { background: #000; box-shadow: none; }
-  97%  { background: #000; box-shadow: none; }
-  100% { background: hsl(150, 100%, 50%); }
-}
-
-@-o-keyframes blink {
-  0%   { background: #0a0 }
-  47%  { background: hsl(150, 100%, 50%); }
-  50%  { background: #000; box-shadow: none; }
-  97%  { background: #000; box-shadow: none; }
-  100% { background: hsl(150, 100%, 50%); }
-}
-*/
-
 #command.hide * {
 	visibility: hidden;
 }
 
 a {
 	text-decoration: underline;
+}
+
+title {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.page-404 {
+		width: 90%;
+		margin: auto;
+	}
 }
