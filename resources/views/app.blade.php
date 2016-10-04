@@ -42,11 +42,13 @@
     <div class="col-md-2">
         @yield('sidebar_right')
     </div>
-    <div class="left-half col-md-6">
-        @yield('left_half')
-    </div>
-    <div class="right-half col-md-6">
-        @yield('right_half')
+    <div class="equal-wrapper clearfix">
+        <div class="left-half col-md-6">
+            @yield('left_half')
+        </div>
+        <div class="right-half col-md-6">
+            @yield('right_half')
+        </div>
     </div>
     <div class="bottom-content">
         @yield('bottom-content')
@@ -71,6 +73,12 @@
 
         //hide gerb
         if($('.gerb-wrapper').length){
+            if($(window).width() > 991){
+                resizeBlocks();
+                $( window ).resize(function() {
+                    resizeBlocks();
+                });
+            }
             $('.slider-wrapper').css('margin-bottom', '0');
             var imagefile = document.getElementById("clock-logo");
             var src = imagefile.src;
@@ -92,6 +100,17 @@
         }
         else {
             $('.site-logo img').css('display', 'block');
+        }
+
+        function resizeBlocks(){
+            var left = $('.equal-wrapper .left-half').height();
+            var right = $('.equal-wrapper .right-half').height();
+            if (left < right) {
+                $(".equal-wrapper .left-half #top-news").height($(".equal-wrapper .right-half #advnews").height());
+            }
+            else {
+                $(".equal-wrapper .right-half #advnews").height($(".equal-wrapper .left-half #top-news").height());
+            }
         }
 
 
