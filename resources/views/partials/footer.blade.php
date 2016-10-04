@@ -1,7 +1,13 @@
 @section('footer')
     <div class="zkr-footer clearfix col-md-12">
         <div class="col-md-6">
-            <div class="ycounter">
+            Запорізький коледж радіоелектроніки ЗНТУ
+            <br>
+            69095, м. Запорiжжя, пр. Соборний, 117.
+            <br>
+            (зупинки транспорту "Площа Пушкiна", "Трампарк")
+            <br>
+            <span class="ycounter">
                 <!-- Yandex.Metrika informer -->
                 <a href="https://metrika.yandex.ru/stat/?id=39934830&amp;from=informer"
                    target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/39934830/3_1_FFFFFFFF_FFFFFFFF_0_uniques"
@@ -36,7 +42,7 @@
                 </script>
                 <noscript><div><img src="https://mc.yandex.ru/watch/39934830" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
                 <!-- /Yandex.Metrika counter -->
-                <div class="liveinternet-counter">
+                <span class="liveinternet-counter">
                     <!--LiveInternet counter--><script type="text/javascript"><!--
                         document.write("<a href='//www.liveinternet.ru/click' "+
                                 "target=_blank><img src='//counter.yadro.ru/hit?t22.6;r"+
@@ -48,13 +54,8 @@
                                 " часа, посетителей за 24 часа и за сегодня' "+
                                 "border='0' width='88' height='31'><\/a>")
                         //--></script><!--/LiveInternet-->
-                </div>
-            </div>
-            Запорізький коледж радіоелектроніки ЗНТУ
-            <br>
-            69095, м. Запорiжжя, пр. Соборний, 117.
-            <br>
-            (зупинки транспорту "Площа Пушкiна", "Трампарк")
+                </span>
+            </span>
         </div>
         <div class="col-md-6">
             Телефони для довiдок:
