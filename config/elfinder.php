@@ -91,6 +91,12 @@ return array(
     |
     */
     'root_options' => array(
+        'uploadAllow' => [
+            'image/png', 'image/jpeg', 'image/gif', 'image/x-icon',
+            'application/pdf',
+        ],
+        'uploadDeny'  => ['all'],
+        'uploadOrder' => 'deny, allow'
     ),
 
 );

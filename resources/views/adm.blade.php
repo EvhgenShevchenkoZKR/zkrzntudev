@@ -4,9 +4,9 @@
     <title>Laravel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="/packages/jquery/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/packages/bootstrap/bootstrap.min.css">
     <script type="text/javascript" src="/packages/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/packages/jquery/jquery.min.js"></script>
     <link rel="shortcut icon" href="/images/icons/favicon_adm.ico">
 
     <script src="/js/admin/hideshow.js"></script>
@@ -21,15 +21,6 @@
 </div>
 <div class="container">
     <div class="content col-md-12">
-        @if(Session::has('message'))
-            <h4 class="alert">{{Session::get('message')}}</h4>
-        @endif
-
-        @if(count($errors))
-            @foreach ($errors->all() as $error)
-                <div>{{ $error }}</div>
-            @endforeach
-        @endif
         <aside id="sidebar" class="amenu column col-md-2">
             <h3>Цитати</h3>
             <ul class="toggle">
@@ -91,6 +82,19 @@
             --}}
         </aside>
         <div class="col-md-10">
+            <div class="logs">
+                @if(Session::has('message'))
+                    <h4 class="msg alert">{{Session::get('message')}}</h4>
+                @endif
+
+                @if(count($errors->all()))
+                    <ul class="msg-errors">
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
             @yield('content')
         </div>
     </div>

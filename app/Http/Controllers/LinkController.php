@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Requests\LinkRequest;
+use App\Http\Requests\LinkRequestUpdate;
 use App\Link;
 use Intervention\Image\Facades\Image;
 use File;
@@ -49,7 +50,7 @@ class LinkController extends Controller
     ]);
   }
   
-  public function update(Link $link, LinkRequest $request){
+  public function update(Link $link, LinkRequestUpdate $request){
     
     if($link->user_id == \Auth::user()->id){
       

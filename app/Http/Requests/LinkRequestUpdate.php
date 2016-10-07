@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class EmployeeRequest extends Request
+class LinkRequestUpdate extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,9 @@ class EmployeeRequest extends Request
     public function rules()
     {
         return [
-            'fio' => 'required',
-            'position' => 'required',
-            'body' => 'required',
-            'photo' => 'required|mimes:jpg,jpeg,png',
+          'title' => 'required',
+          'url' => 'required',
+          'image' => 'mimes:jpg,jpeg,png',
         ];
     }
 }

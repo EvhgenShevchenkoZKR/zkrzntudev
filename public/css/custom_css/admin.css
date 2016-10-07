@@ -49,18 +49,18 @@ ul#sortable li.placeholder:before {
     box-shadow: none !important;
     background-position: 0;
     padding-left: 0;
-    width: 38px;
+    width: 19px;
     height: 38px;
-    background-size: 38px;
+    background-size: 16px;
     background-repeat: no-repeat;
-    background-image: url('img/update.png');
+    background-image: url('img/icn_new_article.png');
 }
 .button-icon:hover,
 .button-icon:visited {
     /*background-color: transparent;*/
 }
 .ui-sortable input.button-icon.delete_menu {
-    background-image: url('img/delete.png');
+    background-image: url('img/icn_trash.png');
 }
 .glyphicon-move {
     cursor: -webkit-grab;

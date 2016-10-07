@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Requests\AdvertRequest;
+use App\Http\Requests\AdvertRequestUpdate;
 use App\Advert;
 use Intervention\Image\Facades\Image;
 use File;
@@ -41,7 +42,7 @@ class AdvertController extends Controller
     ]);
   }
   
-  public function update(Advert $advert, AdvertRequest $request) { 
+  public function update(Advert $advert, AdvertRequestUpdate $request) {
     
     if($advert->user_id == \Auth::user()->id){
 
@@ -74,7 +75,9 @@ class AdvertController extends Controller
   
   public function adminIndex() {
     
-    $adverts = Advert::select('id','title', 'author', 'published')->paginate(5);
+    $adverts = Advert::select('*')
+        ->orderBy('created_at', 'desc')
+        ->paginate(20);
     
     return view('advert.admin_index', ['adverts' => $adverts]);
   }

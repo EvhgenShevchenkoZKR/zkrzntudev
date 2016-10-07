@@ -24,7 +24,9 @@ class NewsRequest extends Request
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'cover_image' => 'required|mimes:jpg,jpeg,png',
         ];
     }
 }

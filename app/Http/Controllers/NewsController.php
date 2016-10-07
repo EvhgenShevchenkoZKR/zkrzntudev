@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Requests\NewsRequest;
+use App\Http\Requests\NewsRequestUpdate;
 use App\News;
 use App\Menu;
 use App\Quote;
@@ -98,7 +99,7 @@ class NewsController extends Controller
     ]);
   }
 
-  public function update(News $news, NewsRequest $request) { 
+  public function update(News $news, NewsRequestUpdate $request) {
 
     if($news->author_id == \Auth::user()->id){
       $news->title = $request->title;

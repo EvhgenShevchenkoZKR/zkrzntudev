@@ -14,7 +14,7 @@
         @foreach($tags as $tag)
             <tr>
                 <td>{{$tag->title}}</td>
-                <td>{{$tag->slug}}</td>
+                <td><a href="/tag/{{$tag->slug}}">{{$tag->slug}}</a></td>
                 <td>
                     <span class="icn_edit">
                         <a class="atable-button" href="/tag/{{$tag->id}}/edit">&nbsp;</a>

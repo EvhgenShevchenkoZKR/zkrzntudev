@@ -6,6 +6,9 @@
         <thead>
         <tr>
             <th class="header">Титло</th>
+            <th class="header">Лінк</th>
+            <th class="header">Створено</th>
+            <th class="header">Змінено</th>
             <th class="header">Автор</th>
             <th class="header">Опубліковано</th>
             <th class="header">Дії</th>
@@ -14,6 +17,20 @@
         @foreach($adverts as $single_news)
             <tr>
                 <td>{{$single_news->title}}</td>
+                {{--Link column --}}
+                <td><a href="/objava/{{$single_news->slug}}">objava/{{$single_news->slug}}</a></td>
+                {{--Created column --}}
+                <td>
+                    {{ date('H:i', strtotime($single_news->created_at)) }}
+                    <br>
+                    {{ date('d.m.y', strtotime($single_news->created_at)) }}
+                </td>
+                {{--Updated column --}}
+                <td>
+                    {{ date('H:i', strtotime($single_news->updated_at)) }}
+                    <br>
+                    {{ date('d.m.y', strtotime($single_news->updated_at)) }}
+                </td>
                 <td>{{$single_news->author}}</td>
                 @if($single_news->published == false)
                     <td>

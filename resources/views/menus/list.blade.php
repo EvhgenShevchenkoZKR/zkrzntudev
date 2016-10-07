@@ -4,14 +4,17 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src='/vendor/js/nested-sortable/jquery.mjs.nestedSortable.js'></script>
     <link rel="stylesheet" href="/css/custom_css/admin.css">
-    <link rel="stylesheet" href="/css/app.css">
+    {{--<link rel="stylesheet" href="/css/app.css">--}}
 @endsection
 
 @section('content')
 
     <h1 class="apage-title relative-apage-title">Список меню</h1>
-
     {!! Form::open(array('url' => 'menus-list', 'method' => 'POST', 'class' => 'form main-form clearfix')) !!}
+    <div class="form-description">Ви можете змінювати порядок меню перетягуючи їх, порядок зберігається автоматично.
+        <br> Для змiни меню введiть новi данi та натиснiть кнопку зберегти
+        <p></p>
+    </div>
     <span style="display: none;" href="#" id="try" data-token="{{ csrf_token() }}"></span>
     <ol id="sortable" class="ui-sortable">
     <?php $i=0; ?>
@@ -55,14 +58,15 @@
     </ol>
     {!! Form::close() !!}
     <hr/>
+    <h2 class="apage-title relative-apage-title">Створити новий пункт меню</h2>
     {!! Form::open(array('url' => 'menu-add', 'method' => 'POST', 'class' => 'form')) !!}
     <div class="form-group">
-        {!! Form::label('Заголовок') !!}
+        {!! Form::label('title', 'Заголовок', ['class' => 'required']) !!}
         {!! Form::text('title', old('title'), array('class' => 'form-control', 'placeholder' => 'Назва пункту меню')) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('Лінк') !!}
+        {!! Form::label('url', 'Лінк', ['class' => 'required']) !!}
         {!! Form::text('url', old('url'), array('class' => 'form-control', 'placeholder' => 'Internal link')) !!}
     </div>
 

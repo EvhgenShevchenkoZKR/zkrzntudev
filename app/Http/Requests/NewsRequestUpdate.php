@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class EmployeeRequest extends Request
+class NewsRequestUpdate extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,9 @@ class EmployeeRequest extends Request
     public function rules()
     {
         return [
-            'fio' => 'required',
-            'position' => 'required',
+            'title' => 'required|max:255',
             'body' => 'required',
-            'photo' => 'required|mimes:jpg,jpeg,png',
+            'cover_image' => 'mimes:jpg,jpeg,png',
         ];
     }
 }

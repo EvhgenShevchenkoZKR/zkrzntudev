@@ -8,9 +8,10 @@
 @section('content')
     <h1 class="apage-title relative-apage-title">Створити новину</h1>
     {!! Form::open(array('url' => 'news/add', 'method' => 'POST', 'class' => 'form clearfix', 'files' => 'true')) !!}
+    <div class="hidden" id="select-something">Оберiть щось</div>
     <div class="form-group">
         <div class="fg-streight left col-md-6">
-            {!! Form::label('Титло') !!}
+            {!! Form::label('title', 'Титло', ['class' => 'required']) !!}
             {!! Form::text('title', old('title'), array('class' => 'form-control')) !!}
         </div>
         <div class="fg-streight right col-md-6">
@@ -18,11 +19,23 @@
             {!! Form::text('author_name', old('author_name'), array('class' => 'form-control')) !!}
         </div>
     </div>
-    <script src="/vendor/js/ckeditor_dark/ckeditor.js"></script>
-    <script src="/vendor/js/ckeditor_dark/adapters/jquery.js"></script>
-    <div class="form-group">
-        {!! Form::label('Текст новини') !!}
-        {!! Form::textarea('body', old('body'), ['class' => 'form-control my-editor']) !!}
+    <div class="image-wrapper-zone clearfix">
+        <div class="form-group fg-streight left col-md-3">
+            <output id="result" /></output>
+        </div>
+        <div class="form-group fg-streight right col-md-9">
+            {!! Form::label('cover_image', 'Зображення', ['class' => 'required']) !!}
+            {!! Form::file('cover_image', array('class' => 'form-control img-upload', 'id' => 'files')) !!}
+
+            <div class="form-group field-left col-md-6">
+                {!! Form::label('Альт зображення') !!}
+                {!! Form::text('cover_alt', old('cover_alt'), ['class' => 'form-control']) !!}
+            </div>
+            <div class="form-group field-right col-md-6">
+                {!! Form::label('Титло зображення') !!}
+                {!! Form::text('cover_title', old('cover_title'), ['class' => 'form-control']) !!}
+            </div>
+        </div>
     </div>
     <div class="form-group">
         {!! Form::label('Теги') !!}
@@ -31,27 +44,10 @@
         'multiple' => 'multiple',
         )) !!}
     </div>
-    <script>
-        $('textarea.my-editor').ckeditor({
-            filebrowserBrowseUrl: '/elfinder/ckeditor',
-        });
-    </script>
-    {{--<div class="form-group">--}}
-        {{--{!! Form::label('Аліас') !!}--}}
-        {{--{!! Form::text('slug', old('slug'), array('class' => 'form-control')) !!}--}}
-    {{--</div>--}}
 
     <div class="form-group">
-        {!! Form::label('Зображення') !!}
-        {!! Form::file('cover_image', array('class' => 'form-control')) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('Альт зображення') !!}
-        {!! Form::text('cover_alt', old('cover_alt'), ['class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('Титло зображення') !!}
-        {!! Form::text('cover_title', old('cover_title'), ['class' => 'form-control']) !!}
+        {!! Form::label('body', 'Текст новини', ['class' => 'required']) !!}
+        {!! Form::textarea('body', old('body'), ['class' => 'form-control my-editor']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('Мета титло') !!}
@@ -67,14 +63,17 @@
     </div>
     <div class="form-group published-wrapper col-md-4">
         {!! Form::label('Опубліковано') !!}
+        {!! Form::hidden('published', false) !!}
         {!! Form::checkbox('published', 1, true, array('class' => 'form-control')) !!}
     </div>
     <div class="form-group published-wrapper col-md-4">
         {!! Form::label('Важлива новина (виводиться на головній сторінці зліва)') !!}
+        {!! Form::hidden('important', false) !!}
         {!! Form::checkbox('important', 1, false, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group published-wrapper col-md-4">
         {!! Form::label('В слайдер (Виводити зображення в боковому слайдері з новинами?') !!}
+        {!! Form::hidden('cover_show', false) !!}
         {!! Form::checkbox('cover_show', 1, true, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
@@ -84,11 +83,53 @@
 @endsection
 
 @section('footerscripts')
+    <script src="/vendor/js/ckeditor_dark/ckeditor.js"></script>
+    <script src="/vendor/js/ckeditor_dark/adapters/jquery.js"></script>
+    <script>
+        $('textarea.my-editor').ckeditor({
+            filebrowserBrowseUrl: '/elfinder/ckeditor',
+        });
+    </script>
     <script>
         $(document).ready(function() {
-            $(function () {
-                $(".chosen-select").chosen();
+            var multi_select_label = $('#select-something').html();
+            $(function(){
+                $(".chosen-select").chosen({
+                    placeholder_text_multiple: multi_select_label
+                });
             });
+            if(window.File && window.FileList && window.FileReader)
+            {
+                var filesInput = document.getElementById("files");
+                filesInput.addEventListener("change", function(event){
+                    var files = event.target.files; //FileList object
+                    var output = document.getElementById("result");
+                    for(var i = 0; i< files.length; i++)
+                    {
+                        var file = files[i];
+                        //Only pics
+                        if(!file.type.match('image'))
+                            continue;
+                        $('#result div').remove();// removing old images on uploading new
+                        var picReader = new FileReader();
+                        var j = 0;
+                        picReader.addEventListener("load",function(event){
+                            j++;
+                            var picFile = event.target;
+                            var div = document.createElement("div");
+                            div.innerHTML = "<div class='thumbnail-wrapper'><img class='thumbnail' src='" + picFile.result + "'" +
+                                    "title='" + picFile.name + "'/></div>";
+                            output.insertBefore(div,null);
+                        });
+                        //Read the image
+                        picReader.readAsDataURL(file);
+                    }
+                });
+            }
+            else
+            {
+                console.log("Your browser does not support File API");
+            }
         });
     </script>
 @endsection

@@ -39,7 +39,7 @@ class TagRequest extends Request
     {
         return [
           'title.required' => 'Титло це назва тегу, його треба заповнити',
-          'meta_title.required' => 'Мета титло це відображується на вкладці браузеру, необхідне для SEO',
+          'meta_title.required' => 'Мета титло відображується на вкладці браузеру, необхідне для SEO',
           'meta_keywords.required' => 'Мета Ключові слова необхідні для SEO',
           'meta_description.required' => 'Мета Опис важливий для SEO його необхідно заповнити',
         ];
