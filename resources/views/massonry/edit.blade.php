@@ -46,6 +46,7 @@
 
     <div class="form-group published-inline col-md-4">
         {!! Form::label('Опубліковано') !!}
+        {!! Form::hidden('published', false) !!}
         {!! Form::checkbox('published', 1, $massonry->published, array('class' => 'form-control')) !!}
     </div>
 

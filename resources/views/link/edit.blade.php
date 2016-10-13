@@ -15,36 +15,38 @@
             {!! Form::text('url', $link->url, array('class' => 'form-control')) !!}
         </div>
     </div>
-    <div class="form-group fg-streight left col-md-6">
-        <div class="img-outer-wrapper">
-            <div class="img-wrapper thumbnail-wrapper">
-                <img class="thumbnail" src="/images/links/{{$link->id}}/small_{{$link->image}}"/>
+    <div class="image-wrapper-zone clearfix">
+        <div class="old-image old-photo col-md-3">
+            <div class="img-outer-wrapper">
+                <div class="img-wrapper thumbnail-wrapper">
+                    <img class="thumbnail" src="/images/links/{{$link->id}}/small_{{$link->image}}"/>
+                </div>
+            </div>
+            <output id="result" /></output>
+        </div>
+        <div class="form-group fg-streight right col-md-9">
+            {!! Form::label('image', 'Зображення', ['class' => 'required']) !!}
+            {!! Form::file('image', array('class' => 'form-control img-upload', 'id' => 'files')) !!}
+
+            <div class="form-group field-left col-md-6">
+                {!! Form::label('Альт зображення') !!}
+                {!! Form::text('image_alt', $link->image_alt, ['class' => 'form-control']) !!}
+            </div>
+            <div class="form-group field-right col-md-6">
+                {!! Form::label('Титло зображення') !!}
+                {!! Form::text('image_title', $link->image_title, ['class' => 'form-control']) !!}
             </div>
         </div>
-        <div id="selectImage">
-            <output id="result" /></output>
-            {!! Form::label('Змінити Зображення') !!}
-            {!! Form::file('image', array('class' => 'form-control img-upload', 'id' => 'files')) !!}
-        </div>
-    </div>
-    <div class="form-group fg-streight right col-md-6">
-        {!! Form::label('Альт зображення') !!}
-        {!! Form::text('image_alt', $link->image_alt, ['class' => 'form-control']) !!}
-
-        {!! Form::label('Титло зображення') !!}
-        {!! Form::text('image_title', $link->image_title, ['class' => 'form-control']) !!}
     </div>
 
-    <div class="col-md-6 pull-right">
-        <div class="form-group published-inline col-md-7">
-            {!! Form::label('Опубліковано') !!}
-            {!! Form::hidden('published', false) !!}
-            {!! Form::checkbox('published', 1, $link->published, array('class' => 'form-control')) !!}
-        </div>
+    <div class="form-group published-inline col-md-4">
+        {!! Form::label('Опубліковано') !!}
+        {!! Form::hidden('published', false) !!}
+        {!! Form::checkbox('published', 1, $link->published, array('class' => 'form-control')) !!}
+    </div>
 
-        <div class="form-group">
-            {!! Form::submit('Зберегти', ['class' => 'btn btn-success pull-right']) !!}
-        </div>
+    <div class="form-group">
+        {!! Form::submit('Зберегти', ['class' => 'btn btn-success pull-right']) !!}
     </div>
     {!! Form::close() !!}
 @endsection

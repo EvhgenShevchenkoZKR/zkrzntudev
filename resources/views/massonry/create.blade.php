@@ -34,17 +34,6 @@
             </div>
         </div>
     </div>
-    {{--<div class="form-group fg-streight left col-md-6">--}}
-        {{--{!! Form::label('Зображення') !!}--}}
-        {{--{!! Form::file('image', array('class' => 'form-control')) !!}--}}
-    {{--</div>--}}
-    {{--<div class="form-group fg-streight right col-md-6">--}}
-        {{--{!! Form::label('Альт зображення') !!}--}}
-        {{--{!! Form::text('image_alt', old('image_alt'), ['class' => 'form-control']) !!}--}}
-
-        {{--{!! Form::label('Титло зображення') !!}--}}
-        {{--{!! Form::text('image_title', old('image_title'), ['class' => 'form-control']) !!}--}}
-    {{--</div>--}}
 
     <div class="form-group">
         {!! Form::label('Текст новини') !!}
@@ -53,6 +42,7 @@
 
     <div class="form-group published-inline col-md-4">
         {!! Form::label('Опубліковано') !!}
+        {!! Form::hidden('published', false) !!}
         {!! Form::checkbox('published', 1, true, array('class' => 'form-control')) !!}
     </div>
 

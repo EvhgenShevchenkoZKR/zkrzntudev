@@ -15,32 +15,34 @@
             {!! Form::text('url', old('url'), array('class' => 'form-control')) !!}
         </div>
     </div>
-    <div id="selectImage">
-    <div class="form-group fg-streight left col-md-6">
-        {!! Form::label('Зображення') !!}
-        {!! Form::file('image', array('class' => 'form-control img-upload', 'id' => 'files')) !!}
-        <output id="result" /></output>
-    </div>
-    </div>
 
-    <div class="form-group fg-streight right col-md-6">
-        {!! Form::label('Альт зображення') !!}
-        {!! Form::text('image_alt', old('image_alt'), ['class' => 'form-control']) !!}
-
-        {!! Form::label('Титло зображення') !!}
-        {!! Form::text('image_title', old('image_title'), ['class' => 'form-control']) !!}
-    </div>
-
-    <div class="col-md-6 pull-right">
-        <div class="form-group published-inline col-md-7">
-            {!! Form::label('Опубліковано') !!}
-            {!! Form::hidden('published', false) !!}
-            {!! Form::checkbox('published', 1, true, array('class' => 'form-control')) !!}
+    <div class="image-wrapper-zone clearfix">
+        <div class="form-group fg-streight left col-md-3">
+            <output id="result" /></output>
         </div>
+        <div class="form-group fg-streight right col-md-9">
+            {!! Form::label('image', 'Зображення', ['class' => 'required']) !!}
+            {!! Form::file('image', array('class' => 'form-control img-upload', 'id' => 'files')) !!}
 
-        <div class="form-group">
-            {!! Form::submit('Зберегти', ['class' => 'btn btn-success pull-right']) !!}
+            <div class="form-group field-left col-md-6">
+                {!! Form::label('Альт зображення') !!}
+                {!! Form::text('image_alt', old('image_alt'), ['class' => 'form-control']) !!}
+            </div>
+            <div class="form-group field-right col-md-6">
+                {!! Form::label('Титло зображення') !!}
+                {!! Form::text('image_title', old('image_title'), ['class' => 'form-control']) !!}
+            </div>
         </div>
+    </div>
+
+    <div class="form-group published-inline col-md-4">
+        {!! Form::label('Опубліковано') !!}
+        {!! Form::hidden('published', false) !!}
+        {!! Form::checkbox('published', 1, true, array('class' => 'form-control')) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::submit('Зберегти', ['class' => 'btn btn-success pull-right']) !!}
     </div>
 
     {!! Form::close() !!}
