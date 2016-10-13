@@ -2,6 +2,18 @@
 
 @section('content')
     <h1 class="apage-title relative-apage-title">Список оголошеннь</h1>
+    {!! Form::open(array('url' => 'adm/objava-search', 'method' => 'POST', 'class' => 'form search-form clearfix' )) !!}
+    @if(empty($search))
+        @php $search = ''; @endphp
+    @endif
+    <div class="form-group col-md-6">
+        {!! Form::label('search', 'Шукати оголошення', ['class' => 'inline']) !!}
+        {!! Form::text('search', $search, ['class' => 'form-control text-inline']) !!}
+    </div>
+    <div class="form-group col-md-6">
+        {!! Form::submit('Шукати', ['class' => 'btn btn-success']) !!}
+    </div>
+    {!! Form::close() !!}
     <table class="companies-atable admin-table tablesorter">
         <thead>
         <tr>
@@ -60,5 +72,7 @@
             </tr>
         @endforeach
     </table>
-    {{ $adverts->render() }}
+    @if(method_exists($adverts,'render'))
+        {{ $adverts->render() }}
+    @endif
 @endsection

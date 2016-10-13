@@ -19,6 +19,7 @@ class NewsController extends Controller
 
 
   public function __construct() {
+
   }
 
   public function create(){ 
@@ -27,6 +28,7 @@ class NewsController extends Controller
   }
   
 
+  //TODO remove this method
   public function show($slug) {
     
     $news = News::where('slug', $slug)->first();
@@ -151,14 +153,34 @@ class NewsController extends Controller
 
     return redirect()->back()->with('message', $msg);
   }
+
+  public function search(Request $request){
+    if(!empty($request->search)){
+      return $this->adminIndex($request->search);
+    }
+    else {
+      return redirect('adm/news')->with('message', 'Введiть щось');
+    }
+  }
   
-  public function adminIndex() {
+  public function adminIndex($search = null) {
+    if(!empty($search) ) {
+      $news = News::select('*')
+          ->orderBy('created_at', 'desc')
+          ->Where('title', 'like', '%' . $search . '%')
+          ->get();
+    }
+    else {
+      $news = News::select('*')
+          ->orderBy('created_at', 'desc')
+          ->paginate(25);
+    }
+
     
-    $news = News::select('*')
-    ->orderBy('created_at', 'desc')
-    ->paginate(25);
-    
-    return view('news.admin_index', ['news' => $news]);
+    return view('news.admin_index', [
+        'news' => $news,
+        'search' => $search
+    ]);
   }
   
   public function delete(News $news) {

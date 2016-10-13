@@ -26,7 +26,7 @@ class LinkRequest extends Request
         return [
           'title' => 'required',
           'url' => 'required',
-          'image' => 'required|mimes:jpg,jpeg,png',
+          'image' => 'required|mimes:jpg,jpeg,png|max:2048',
         ];
     }
 }

@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
    Route::post('menus-list', 'MenuController@reindex');
    Route::get('menus-list', 'MenuController@menusList');
    //News
+   Route::post('adm/news-search', 'NewsController@search');
    Route::post('news/add', 'NewsController@store');
    Route::get('adm/news/add', 'NewsController@create');
    Route::get('adm/news', 'NewsController@adminIndex');
@@ -58,6 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
    Route::get('adm/quote/{quote}/edit', 'QuoteController@edit');
    Route::delete('adm/quote/{quote}/delete', 'QuoteController@delete');
    //Objavas (Adverts)
+   Route::post('adm/objava-search', 'AdvertController@search');
    Route::get('adm/objavas', 'AdvertController@adminIndex');
    Route::post('adm/objava/add', 'AdvertController@store');
    Route::get('adm/objava/add', 'AdvertController@create');

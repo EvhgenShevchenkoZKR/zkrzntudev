@@ -1,7 +1,7 @@
 @extends('adm')
 
 @section('content')
-    <h1 class="apage-title relative-apage-title">Створити посилання</h1>
+    <h1 class="apage-title relative-apage-title">Правити плитку</h1>
 
     {!! Form::open(['url' => "adm/massonry/$massonry->id/edit", 'method' => 'PATCH', 'class' => 'form', 'files' => 'true']) !!}
 

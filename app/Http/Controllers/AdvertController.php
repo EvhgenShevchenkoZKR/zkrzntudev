@@ -72,14 +72,34 @@ class AdvertController extends Controller
     
     return redirect()->back()->with('message', $msg);
   }
+
+  public function search(Request $request){
+    if(!empty($request->search)){
+      return $this->adminIndex($request->search);
+    }
+    else {
+      return redirect('adm/objavas')->with('message', 'Введiть щось');
+    }
+  }
   
-  public function adminIndex() {
+  public function adminIndex($search = null) {
+
+    if(!empty($search) ) {
+      $adverts = Advert::select('*')
+          ->orderBy('created_at', 'desc')
+          ->Where('title', 'like', '%' . $search . '%')
+          ->get();
+    }
+    else {
+      $adverts = Advert::select('*')
+          ->orderBy('created_at', 'desc')
+          ->paginate(25);
+    }
     
-    $adverts = Advert::select('*')
-        ->orderBy('created_at', 'desc')
-        ->paginate(20);
-    
-    return view('advert.admin_index', ['adverts' => $adverts]);
+    return view('advert.admin_index', [
+        'adverts' => $adverts,
+        'search' => $search
+    ]);
   }
 
   public function delete(Advert $advert) {

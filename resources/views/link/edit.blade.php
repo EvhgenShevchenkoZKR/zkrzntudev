@@ -1,7 +1,7 @@
 @extends('adm')
 
 @section('content')
-    <h1 class="apage-title relative-apage-title">Створити посилання</h1>
+    <h1 class="apage-title relative-apage-title">Правити посилання</h1>
 
     {!! Form::open(['url' => "adm/link/$link->id/edit", 'method' => 'PATCH', 'class' => 'form', 'files' => 'true']) !!}
 

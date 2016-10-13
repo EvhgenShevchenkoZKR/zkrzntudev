@@ -64,6 +64,18 @@
 .company-form #result .result-alt {
   margin-bottom: 12px;
 }
+.search-form .inline {
+  display: inline-block;
+}
+.search-form .text-inline {
+  display: inline-block;
+  width: calc(100% - 155px);
+  margin-left: 10px;
+}
+.search-form .form-group .btn-success {
+  margin-top: -1px;
+  padding: 7px 35px;
+}
 .form {
   font-family: FiraSans, sans-serif;
   font-weight: 600;
