@@ -26,7 +26,68 @@ class SliderController extends Controller
     
     return view('slider.sliders', compact('sliders', $sliders));
   }
-  
+
+  public function publish(Slider $slider){
+    $slider->published = true;
+    $slider->save();
+    $msg = 'Успiх';
+
+    return redirect()->back()->with('message', $msg);
+  }
+
+  public function unpublish(Slider $slider){
+    $slider->published = false;
+    $slider->save();
+    $msg = 'Успiх';
+
+    return redirect()->back()->with('message', $msg);
+  }
+
+  public function delete(Slider $slider){
+
+    $this->removeSlider($slider);
+    $msg = 'Видалено';
+
+    return redirect()->back()->with('message', $msg);
+  }
+
+  public function ajax_reorder(Request $request){
+    $orderedArray = $this->unserializaOrderString($request->testdata);
+    $i = 0;
+    foreach($orderedArray as $key=>$parent){
+      $i++;
+      $slider = Slider::findOrFail($key);
+      $slider->weight = $i;
+      $slider->save();
+    }
+
+    $response = array(
+        'status' => 'success',
+        'msg' => 'Збережено',
+    );
+    return \Response::json($response);
+  }
+
+  /**
+   * nestedSortable serialize info about reordering in a little strange way
+   * so i have to deserilize it by myself
+   * @param $string
+   * @return array
+   */
+  private function unserializaOrderString($string){
+    $pieces = explode("&", $string);
+    $result = array();
+    foreach ($pieces as $peace){
+      $pic = explode('=',$peace);
+      $pic[0] = str_replace('list[', '', $pic[0]);
+      $pic[0] = str_replace(']', '', $pic[0]);
+      if(is_numeric($pic[0])){
+        $result[$pic[0]] = $pic[1];
+      }
+    }
+    return $result;
+  }
+
   public function reindex(Request $request){
     if($request->get('delete_slider')){
       $slider = Slider::findOrFail($request->get('delete_slider'));

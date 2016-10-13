@@ -7,16 +7,16 @@
         @foreach($massonry as $plate)
             <div class="plate-wrapper">
                 <a href="/{{$plate->url}}">
-                <div class="plate-wrapper-inner">
-                    <img src="images/massonry/{{$plate->id}}/{{$plate->image}}"
-                         alt="{{$plate->image_alt}}"
-                         title="{{$plate->image_title}}"
-                    >
-                    <h4 class="plate-title">{{$plate->title}}</h4>
-                    <div class="plate-body">{!! str_limit(strip_tags($plate->body,
-            '<a><p><b><strong><em><ol><ul><li>'),
-            $limit = 200, $end = '...') !!}</div>
-                </div>
+                    <div class="plate-wrapper-inner">
+                        <img src="images/massonry/{{$plate->id}}/{{$plate->image}}"
+                             alt="{{$plate->image_alt}}"
+                             title="{{$plate->image_title}}"
+                        >
+                        <h4 class="plate-title">{{$plate->title}}</h4>
+                        <div class="plate-body">{!! str_limit(strip_tags($plate->body,
+                '<a><p><b><strong><em><ol><ul><li>'),
+                $limit = 200, $end = '...') !!}</div>
+                    </div>
                 </a>
             </div>
         @endforeach

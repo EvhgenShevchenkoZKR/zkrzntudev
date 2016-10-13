@@ -19,7 +19,9 @@ class HomepageController extends Controller
     $m = new Menu();
     $menus = $m->mainMenu();
 
-    $sliders = Slider::orderBy('weight')->get();
+    $sliders = Slider::select('*')
+    ->where('published', true)
+    ->orderBy('weight')->get();
 
     //prepare 8 element for top news slider at homepage
     $top_news = News::select('id','slug','cover_image', 'cover_alt', 'cover_title', 'title', 'body')

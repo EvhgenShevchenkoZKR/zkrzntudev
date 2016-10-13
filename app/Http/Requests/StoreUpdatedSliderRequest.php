@@ -25,14 +25,17 @@ class StoreUpdatedSliderRequest extends Request
     {
         return [
             'title' => 'required',
-            //
+            'url'   => 'required',
+            'image' => 'max:5',
+            'image.*' => 'mimes:jpg,jpeg,png|max:5000',
         ];
     }
 
     public function messages()
     {
         return [
-          'title.required' => 'Титул має бути заповнений',
+            'url.required' => 'Fill the url',
+            'image.*.mimes' => 'Image must be one of this file types jpg,jpeg,png'
         ];
     }
 }

@@ -6,6 +6,7 @@
         <thead>
         <tr>
             <th class="header">Титло</th>
+            <th class="header">Лiнк</th>
             <th class="header">Зобреження</th>
             <th class="header">Належить до</th>
             <th class="header">Опубліковано</th>
@@ -15,6 +16,7 @@
         @foreach($childs as $child)
             <tr>
                 <td>{{$child->title}}</td>
+                <td><a href="/child/{{$child->slug}}">/child/{{$child->slug}}</a></td>
                 <td><img src="/images/child/{{$child->id}}/thumbnail_{{$child->cover_image}}"/></td>
                 @if(isset($child->parent->title))
                     <td>{{$child->parent->title}}</td>

@@ -14,7 +14,7 @@
         @foreach($parents as $parent)
             <tr>
                 <td>{{$parent->title}}</td>
-                <td>{{$parent->slug}}</td>
+                <td><a href="/{{$parent->slug}}">{{$parent->slug}}</a></td>
                 @if($parent->published == false)
                     <td>
                     <span class="ared">Ні</span>

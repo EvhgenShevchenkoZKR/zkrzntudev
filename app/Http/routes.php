@@ -32,6 +32,10 @@ Route::group(['middleware' => 'auth'], function () {
    Route::get('adm/slider/add', 'SliderController@createSlider');
    Route::post('edit-slider/{slider}', 'SliderController@storeUpdatedSlider');
    Route::get('edit-slider/{slider}', 'SliderController@editSlider');
+   Route::get('adm/slider/{slider}/publish', 'SliderController@publish');
+   Route::get('adm/slider/{slider}/unpublish', 'SliderController@unpublish');
+   Route::delete('adm/slider/{slider}/delete', 'SliderController@delete');
+   Route::post('ajax-slider-reorder', 'SliderController@ajax_reorder');
    //Menus
    Route::post('menu-add', 'MenuController@store');
    Route::post('ajax-menus-reorder', 'MenuController@reorder_ajax');

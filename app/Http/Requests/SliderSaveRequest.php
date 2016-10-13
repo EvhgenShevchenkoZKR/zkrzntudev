@@ -26,7 +26,8 @@ class SliderSaveRequest extends Request
         return [
             'title' => 'required',
             'url'   => 'required',
-            'image.*' => 'required|mimes:jpg,jpeg,png',
+            'image' => 'max:5',
+            'image.*' => 'required|mimes:jpg,jpeg,png|max:5000',
         ];
 
 
@@ -35,7 +36,7 @@ class SliderSaveRequest extends Request
     public function messages()
     {
         return [
-          'url.required' => 'Fill the url, asshole',
+          'url.required' => 'Fill the url',
           'image.*.required' => 'Image is required',
           'image.*.mimes' => 'Image must be one of this file types jpg,jpeg,png'
         ];

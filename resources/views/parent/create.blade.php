@@ -8,8 +8,9 @@
 @section('content')
     <h1 class="apage-title relative-apage-title">Створити Базову сторінку</h1>
     {!! Form::open(array('url' => 'adm/parent/add', 'method' => 'POST', 'class' => 'form clearfix')) !!}
+    <div class="hidden" id="select-something">Оберiть щось</div>
     <div class="form-group">
-        {!! Form::label('Титло') !!}
+        {!! Form::label('title', 'Титло', ['class' => 'required']) !!}
         {!! Form::text('title', old('title'), array('class' => 'form-control')) !!}
     </div>
     <div class="form-group fg-streight left col-md-6">
@@ -21,7 +22,7 @@
         {!! Form::text('title_tags', old('title_tags'), array('class' => 'form-control')) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('Текст Сторінки') !!}
+        {!! Form::label('description', 'Текст Сторінки', ['class' => 'required']) !!}
         {!! Form::textarea('description', old('description'), ['class' => 'form-control my-editor']) !!}
     </div>
 
@@ -64,8 +65,11 @@
     </script>
     <script>
         $(document).ready(function() {
-            $(function () {
-                $(".chosen-select").chosen();
+            var multi_select_label = $('#select-something').html();
+            $(function(){
+                $(".chosen-select").chosen({
+                    placeholder_text_multiple: multi_select_label
+                });
             });
         });
     </script>

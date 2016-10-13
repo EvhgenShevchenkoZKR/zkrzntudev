@@ -25,7 +25,9 @@ class MassonryRequest extends Request
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:255',
+            'url' => 'required',
+            'body' => 'required',
         ];
     }
 }

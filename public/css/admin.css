@@ -189,6 +189,21 @@
 .form .form-group .btn-success {
   margin-right: 15px;
 }
+.delete-slide {
+  background-image: url(images/icn_trash.png);
+  font-size: 0;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-position: 0;
+  padding-left: 0;
+  width: 19px;
+  height: 38px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
 .alttitle-edit-wrapper {
   padding: 0;
 }

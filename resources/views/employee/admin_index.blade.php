@@ -68,7 +68,6 @@
 
         function save_order(){
             var r = $('#sortable').nestedSortable('serialize');
-            console.log(r);
             var data = {
                 _token:$('#try').data('token'), //todo - get some normal way of getting token
                 testdata: r
@@ -79,9 +78,6 @@
                 type:"POST",
                 data: data,
                 success:function(data){
-//                    console.log('returned');
-                    console.log(data.msg);
-                    console.log(data.serialized);
                     $('.content .apage-title').prepend('<div id="panel" class="alert success">' + data.msg + '</div>');
                     $("#panel").fadeIn( 600 ).delay( 800 ).fadeOut( 800 );
                 },

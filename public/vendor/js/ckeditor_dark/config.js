@@ -24,5 +24,5 @@ CKEDITOR.editorConfig = function( config ) {
 
     config.uiColor = 'black';
 
-    config.removeButtons = 'Templates,Preview,Print,NewPage,Save,Cut,Copy,Paste,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Outdent,Indent,Blockquote,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Unlink,Link,Flash,SpecialChar,PageBreak,Iframe,ShowBlocks,About';
+    config.removeButtons = 'Templates,Preview,Print,NewPage,Save,Cut,Copy,Paste,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Outdent,Indent,Blockquote,CreateDiv,BidiLtr,BidiRtl,Language,Anchor,Unlink,Flash,SpecialChar,PageBreak,Iframe,ShowBlocks,About';
 };

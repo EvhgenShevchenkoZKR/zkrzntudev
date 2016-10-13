@@ -26,20 +26,20 @@
                         <span class="glyphicon glyphicon-move"></span>
                         <span class="fake-th">{{$massonry->title}}</span>
                     </span>
-                    <span class="fake-column draggable-25">{{$massonry->url}}</span>
+                    <span class="fake-column draggable-25"><a href="/{{$massonry->url}}">{{$massonry->url}}</a></span>
                     <span class="fake-column draggable-20"><img src="/images/massonry/{{$massonry->id}}/thumbnail_{{$massonry->image}}"></span>
                     <span class="fake-column draggable-10">
                         @if($massonry->published == true)
-                                                <span class="agreen">Так</span>
-                                                <span class="icn_security">
+                            <span class="agreen">Так</span>
+                            <span class="icn_security">
                             <a class="atable-button a-unpublish"  href="/adm/massonry/{{$massonry->id}}/unpublish">&nbsp;</a>
                         </span>
-                                            @else
-                                                <span class="ared">Ні</span>
-                                                <span class="icn_photo">
+                        @else
+                            <span class="ared">Ні</span>
+                            <span class="icn_photo">
                             <a class="atable-button a-publish"  href="/adm/massonry/{{$massonry->id}}/publish">&nbsp;</a>
                         </span>
-                                            @endif
+                        @endif
                     </span>
                     <div class='draggable-10'>
                         <span class="icn_edit">
