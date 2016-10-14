@@ -12,7 +12,9 @@
         "unisharp/laravel-filemanager": "^1.5",
         "barryvdh/laravel-elfinder": "^0.3.7",
         "mews/purifier": "~2.0",
-        "cviebrock/eloquent-sluggable": "^4.0"
+        "cviebrock/eloquent-sluggable": "^4.0",
+        "watson/sitemap": "2.0.*",
+        "roumen/feed": "^2.10"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

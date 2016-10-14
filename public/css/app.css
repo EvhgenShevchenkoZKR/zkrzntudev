@@ -959,5 +959,15 @@ hr.divider.show {
     float: none;
   }
 }
+.feed-icon {
+  display: inline-block;
+  background-image: url(images/rssicon.png);
+  background-position: center right;
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  vertical-align: top;
+}
 
 /*# sourceMappingURL=app.css.map */

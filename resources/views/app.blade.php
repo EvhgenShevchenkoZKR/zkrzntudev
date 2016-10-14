@@ -116,5 +116,6 @@
 
     });
 </script>
+<script id="dsq-count-scr" src="//zkrzntudev-pe-hu.disqus.com/count.js" async></script>
 </body>
 </html>

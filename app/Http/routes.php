@@ -1,7 +1,6 @@
 <?php
 
 //Todo Remove cards from database
-
 //Visible pages
 Route::get('/', 'HomepageController@homepageSlider');
 Route::get('administration', 'IndexController@administrationPage');
@@ -14,7 +13,8 @@ Route::get('child/{slug}', 'IndexController@showSingleChild');
 Route::post('ajax-more', 'IndexController@ajax_more');
 Route::post('ajax-more-parent', 'IndexController@ajax_more_parent');
 Route::get('objava/{slug}', 'IndexController@showSingleObjava');
-
+Route::get('sitemap.xml', 'SitemapController@index');
+Route::get('feed.xml', 'SitemapController@feed');
 
 
 Route::group(['middleware' => 'auth'], function () {

@@ -7,6 +7,8 @@
             <br>
             (зупинки транспорту "Площа Пушкiна", "Трампарк")
             <br>
+            <span class="developer-name"><a href="/sitemap.xml">Мапа сайту</a></span>
+            <a href="/feed.xml" class="feed-icon itt-rss-tag-icon" title="Підписатися на ЗАПОРІЗЬКИЙ КОЛЕДЖ РАДІОЕЛЕКТРОНІКИ ЗАПОРІЗЬКОГО НАЦІОНАЛЬНОГО ТЕХНІЧНОГО УНІВЕРСИТЕТУ RSS"></a>
             <span class="ycounter">
                 <!-- Yandex.Metrika informer -->
                 <a href="https://metrika.yandex.ru/stat/?id=39934830&amp;from=informer"

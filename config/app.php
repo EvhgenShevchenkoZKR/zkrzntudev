@@ -155,6 +155,7 @@ return [
         Barryvdh\Elfinder\ElfinderServiceProvider::class, // one more file upload https://github.com/barryvdh/laravel-elfinder
         Cviebrock\EloquentSluggable\ServiceProvider::class, //sluggable
         Mews\Purifier\PurifierServiceProvider::class, //purifier
+        Watson\Sitemap\SitemapServiceProvider::class, //sitemap https://github.com/dwightwatson/sitemap
         /*
          * Application Service Providers...
          */
@@ -163,6 +164,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Roumen\Feed\FeedServiceProvider::class,
     ],
 
     /*
@@ -213,7 +215,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
-
+        'Sitemap' => Watson\Sitemap\Facades\Sitemap::class,
+        'Feed' => Roumen\Feed\Feed::class,
     ],
 
 ];
